@@ -30,12 +30,29 @@ namespace Controlador
         public static string InsertarAutorizados(PersonasAutorizadas personasAutorizadas)
         {
             RepositorioAutorizados Datos = new RepositorioAutorizados();
-            if(personasAutorizadas.Documento == string.Empty)
+            if (personasAutorizadas.Documento == string.Empty)
             {
-                return "Error al guardar el registro";
+                return "Es necesario ingresar un documento";
             }
+            else if (personasAutorizadas.Placa1 == string.Empty && personasAutorizadas.Placa2==string.Empty)
+            {
+                return "Es necesario que el autorizado tenga por lo menos una placa";
+            }            
             else
             {
+                string fechaInicio = Convert.ToDateTime(personasAutorizadas.FechaInicio).ToString();
+                string fechaFin = Convert.ToDateTime(personasAutorizadas.FechaFin).ToString();
+                if (fechaInicio == string.Empty && fechaFin==string.Empty)
+                {
+                    fechaInicio = "NULL";
+                    fechaFin= "NULL";
+                    personasAutorizadas.FechaInicio = Convert.ToDateTime(fechaInicio);
+                    personasAutorizadas.FechaFin = Convert.ToDateTime(fechaFin);
+                }
+                else
+                {
+                    return Datos.InsertarAutorizado(personasAutorizadas);
+                }
                 return Datos.InsertarAutorizado(personasAutorizadas);
             }
 

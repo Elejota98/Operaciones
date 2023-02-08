@@ -31,7 +31,7 @@ namespace Operaciones
         {
             try
             {
-                login.Usuario = txtUsuario.Text;
+                login.Usuario = txtUsuario.Text.ToUpper();
                 login.Clave = txtContraseña.Text;
 
                 DataTable tabla = new DataTable();

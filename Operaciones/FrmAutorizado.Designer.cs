@@ -45,8 +45,9 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.PanelAcciones = new System.Windows.Forms.Panel();
+            this.btnActualizar = new FontAwesome.Sharp.IconButton();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -153,6 +154,7 @@
             // 
             // DvgListadoPersonasAutorizadas
             // 
+            this.DvgListadoPersonasAutorizadas.AllowUserToDeleteRows = false;
             this.DvgListadoPersonasAutorizadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DvgListadoPersonasAutorizadas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Editar});
@@ -166,6 +168,7 @@
             this.DvgListadoPersonasAutorizadas.DefaultCellStyle = dataGridViewCellStyle1;
             this.DvgListadoPersonasAutorizadas.Location = new System.Drawing.Point(20, 59);
             this.DvgListadoPersonasAutorizadas.Name = "DvgListadoPersonasAutorizadas";
+            this.DvgListadoPersonasAutorizadas.ReadOnly = true;
             this.DvgListadoPersonasAutorizadas.Size = new System.Drawing.Size(881, 128);
             this.DvgListadoPersonasAutorizadas.TabIndex = 33;
             this.DvgListadoPersonasAutorizadas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DvgListadoPersonasAutorizadas_CellContentClick);
@@ -174,6 +177,7 @@
             // 
             this.Editar.HeaderText = "Editar";
             this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
             // 
             // txtPlaca2Buscar
             // 
@@ -232,13 +236,33 @@
             // PanelAcciones
             // 
             this.PanelAcciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PanelAcciones.Controls.Add(this.btnActualizar);
             this.PanelAcciones.Controls.Add(this.iconButton3);
-            this.PanelAcciones.Controls.Add(this.iconButton2);
+            this.PanelAcciones.Controls.Add(this.btnGuardar);
             this.PanelAcciones.Controls.Add(this.iconButton1);
             this.PanelAcciones.Location = new System.Drawing.Point(799, 71);
             this.PanelAcciones.Name = "PanelAcciones";
             this.PanelAcciones.Size = new System.Drawing.Size(158, 204);
             this.PanelAcciones.TabIndex = 54;
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(146)))), ((int)(((byte)(0)))));
+            this.btnActualizar.FlatAppearance.BorderSize = 0;
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnActualizar.Icon = FontAwesome.Sharp.IconChar.User;
+            this.btnActualizar.IconColor = System.Drawing.Color.White;
+            this.btnActualizar.IconSize = 16;
+            this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
+            this.btnActualizar.Location = new System.Drawing.Point(36, 24);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(98, 39);
+            this.btnActualizar.TabIndex = 3;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnActualizar.UseVisualStyleBackColor = false;
             // 
             // iconButton3
             // 
@@ -260,25 +284,25 @@
             this.iconButton3.UseVisualStyleBackColor = false;
             this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
             // 
-            // iconButton2
+            // btnGuardar
             // 
-            this.iconButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(151)))), ((int)(((byte)(218)))));
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton2.ForeColor = System.Drawing.SystemColors.Control;
-            this.iconButton2.Icon = FontAwesome.Sharp.IconChar.FloppyO;
-            this.iconButton2.IconColor = System.Drawing.Color.White;
-            this.iconButton2.IconSize = 16;
-            this.iconButton2.Image = ((System.Drawing.Image)(resources.GetObject("iconButton2.Image")));
-            this.iconButton2.Location = new System.Drawing.Point(36, 78);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(98, 39);
-            this.iconButton2.TabIndex = 1;
-            this.iconButton2.Text = "Guardar";
-            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton2.UseVisualStyleBackColor = false;
-            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(151)))), ((int)(((byte)(218)))));
+            this.btnGuardar.FlatAppearance.BorderSize = 0;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnGuardar.Icon = FontAwesome.Sharp.IconChar.FloppyO;
+            this.btnGuardar.IconColor = System.Drawing.Color.White;
+            this.btnGuardar.IconSize = 16;
+            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
+            this.btnGuardar.Location = new System.Drawing.Point(36, 78);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(98, 39);
+            this.btnGuardar.TabIndex = 1;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.iconButton2_Click);
             // 
             // iconButton1
             // 
@@ -517,6 +541,7 @@
             this.txtDocumento.Name = "txtDocumento";
             this.txtDocumento.Size = new System.Drawing.Size(175, 26);
             this.txtDocumento.TabIndex = 30;
+            this.txtDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDocumento_KeyPress);
             // 
             // FrmAutorizado
             // 
@@ -582,7 +607,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel PanelAcciones;
         private FontAwesome.Sharp.IconButton iconButton3;
-        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton btnGuardar;
         private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
@@ -609,5 +634,6 @@
         private System.Windows.Forms.TextBox txtNombreApellidos;
         private System.Windows.Forms.TextBox txtDocumento;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Editar;
+        private FontAwesome.Sharp.IconButton btnActualizar;
     }
 }

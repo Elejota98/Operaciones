@@ -17,8 +17,7 @@ namespace Operaciones
 
         public string Cargo;
         public string Documento;
-        public long IdEstacionamiento;
-        FrmMenu menu = new FrmMenu();
+        public long IdEstacionamiento;       
         AutorizacionesViewModel autorizacionesView = new AutorizacionesViewModel();
         PersonasAutorizadas personasAutorizadas = new PersonasAutorizadas();
         public FrmAutorizado(string documento, string cargo, long idEstacionamiento)
@@ -27,12 +26,15 @@ namespace Operaciones
             this.Cargo= cargo;
             this.Documento= documento;
             this.IdEstacionamiento = idEstacionamiento;
+            btnActualizar.Visible = false;
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
             Limpiar();
             Desbloquear();
+            DtmFechaFin.Enabled = false;
+            DtmFechaInicio.Enabled = false;
         }
 
         private void iconButton2_Click(object sender, EventArgs e)
@@ -42,6 +44,8 @@ namespace Operaciones
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
+            btnActualizar.Visible= false;
+            btnGuardar.Visible = true;            
             Limpiar();
             Bloquear();
         }
@@ -218,6 +222,7 @@ namespace Operaciones
                 if (rta.Equals("OK"))
                 {
                     MensajeOk("Registro guardado correctamente");
+                    Limpiar();
                 }
                 else
                 {
@@ -259,8 +264,11 @@ namespace Operaciones
                         DtmFechaFin.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["FechaFin"].Value);
                         Bloquear();
                         cboAutorizados.Enabled = true;
-                        DtmFechaInicio.Enabled = true;
-                        DtmFechaFin.Enabled = true;
+                        //DtmFechaInicio.Enabled = true;
+                        //DtmFechaFin.Enabled = true;
+                        btnActualizar.Visible = true;
+                        btnGuardar.Visible = false;
+                        txtDocumento.Enabled = false;
                     }
                     else if (Cargo == "CONTROL INTERNO" || Cargo == "ADMINISTRATIVO")
                     {
@@ -279,6 +287,9 @@ namespace Operaciones
                         DtmFechaInicio.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["FechaInicio"].Value);
                         DtmFechaFin.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["FechaFin"].Value);
                         Desbloquear();
+                        btnActualizar.Visible = true;
+                        btnGuardar.Visible = false;
+                        txtDocumento.Enabled = false;
                     }
                     else
                     {
@@ -315,6 +326,16 @@ namespace Operaciones
         private void cboAutorizados_MouseClick(object sender, MouseEventArgs e)
         {
             CargarAutorizaciones();
+        }
+
+        private void txtDocumento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MensajeError("El documento solo debe ser números");
+                e.Handled = true;
+                return;
+            }
         }
     }
 }
