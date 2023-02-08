@@ -99,9 +99,9 @@ namespace Servicios
                 sqlCon = Conexion.getInstancia().CrearConexion();
                 string cadena = ("insert into T_PersonasAutorizadas (Documento, IdAutorizacion, IdEstacionamiento, NombreApellidos, IdTarjeta, NombreEmpresa," +
                 "Nit, FechaCreacion, DocumentoUsuarioCreacion, Estado, Sincronizacion, FechaInicio, FechaFin, Telefono, Email, Placa1, Placa2," +
-                "Placa3, Placa4, Placa5, ValorBolsa Values('" + personasAutorizadas.Documento + "','" + personasAutorizadas.IdAutorizado + "', '" + personasAutorizadas.IdEstacionamiento + "'," +
-                "'" + personasAutorizadas.NombreApellidos + "', '" + personasAutorizadas.Documento + "', '" + personasAutorizadas + "', '" + personasAutorizadas.NombreEmpresa + "', '" + personasAutorizadas.Nit + "'," +
-                "'getDate()', '" + personasAutorizadas.Documento + "', '1', '1', '','','" + personasAutorizadas.Telefono + "', '" + personasAutorizadas.Email + "', '" + personasAutorizadas.Placa1 + "'," +
+                "Placa3, Placa4, Placa5, ValorBolsa) Values('" + personasAutorizadas.Documento + "','" + personasAutorizadas.IdAutorizado + "', '" + personasAutorizadas.IdEstacionamiento + "'," +
+                "'" + personasAutorizadas.NombreApellidos + "', '" + personasAutorizadas.Documento + "', '" + personasAutorizadas.NombreEmpresa + "', '" + personasAutorizadas.Nit + "','getDate()', " +
+                "'" + personasAutorizadas.DocumentoUsuarioCreacion + "', '1', '1', '','','" + personasAutorizadas.Telefono + "', '" + personasAutorizadas.Email + "', '" + personasAutorizadas.Placa1 + "'," +
                 "'" + personasAutorizadas.Placa2 + "')");
                 SqlCommand comando = new SqlCommand(cadena,sqlCon);
                 sqlCon.Open();

@@ -16,5 +16,10 @@ namespace Controlador
             RepositorioLogin Datos = new RepositorioLogin();
             return Datos.Login(login);
         }
+        public static DataTable Estacionamiento()
+        {
+            RepositorioLogin Datos = new RepositorioLogin();
+            return Datos.ListarEstacionamiento();
+        }
     }
 }

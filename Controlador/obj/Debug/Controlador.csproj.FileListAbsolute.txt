@@ -9,3 +9,14 @@ C:\Users\Administrador\source\repos\Operaciones\Controlador\bin\Debug\Servicios.
 C:\Users\Administrador\source\repos\Operaciones\Controlador\obj\Debug\Controlador.csproj.CopyComplete
 C:\Users\Administrador\source\repos\Operaciones\Controlador\obj\Debug\Controlador.dll
 C:\Users\Administrador\source\repos\Operaciones\Controlador\obj\Debug\Controlador.pdb
+D:\PROYECTOS\LJ\Operaciones\Controlador\bin\Debug\Controlador.dll
+D:\PROYECTOS\LJ\Operaciones\Controlador\bin\Debug\Controlador.pdb
+D:\PROYECTOS\LJ\Operaciones\Controlador\bin\Debug\Modelo.dll
+D:\PROYECTOS\LJ\Operaciones\Controlador\bin\Debug\Servicios.dll
+D:\PROYECTOS\LJ\Operaciones\Controlador\bin\Debug\Modelo.pdb
+D:\PROYECTOS\LJ\Operaciones\Controlador\bin\Debug\Servicios.pdb
+D:\PROYECTOS\LJ\Operaciones\Controlador\obj\Debug\Controlador.csproj.AssemblyReference.cache
+D:\PROYECTOS\LJ\Operaciones\Controlador\obj\Debug\Controlador.csproj.CoreCompileInputs.cache
+D:\PROYECTOS\LJ\Operaciones\Controlador\obj\Debug\Controlador.csproj.CopyComplete
+D:\PROYECTOS\LJ\Operaciones\Controlador\obj\Debug\Controlador.dll
+D:\PROYECTOS\LJ\Operaciones\Controlador\obj\Debug\Controlador.pdb

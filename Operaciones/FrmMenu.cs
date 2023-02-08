@@ -18,6 +18,7 @@ namespace Operaciones
         public string Nombre;
         public string Cargo;
         public string Documento;
+        public long IdEstacionamiento;
         private Form activeform = null;
         public FrmMenu()
         {
@@ -100,7 +101,7 @@ namespace Operaciones
         private void BtnPersonasAutorizadas_Click(object sender, EventArgs e)
         {
 
-            AbrirFormularioHijo(new FrmAutorizado(Documento,Cargo));
+            AbrirFormularioHijo(new FrmAutorizado(Documento,Cargo, IdEstacionamiento));
             
             lblTitulo.Text = BtnPersonasAutorizadas.Text;
         }

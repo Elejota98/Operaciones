@@ -55,12 +55,21 @@ namespace Operaciones
                     }
                     else
                     {
+                        Estacionamiento estacionamiento = new Estacionamiento();
+                        DataTable tablaE = new DataTable();
+                        tablaE = LoginController.Estacionamiento();
+                        if (tablaE.Rows.Count >= 1)
+                        {
+                           
+                            estacionamiento.IdEstacionamiento = Convert.ToInt64(tablaE.Rows[0][0]);
+                        }
+
                         FrmMenu frmm = new FrmMenu();                        
-                        login.Documento = Convert.ToString(tabla.Rows[0][0]);
                         frmm.Documento = Convert.ToString(tabla.Rows[0][0]);
                         frmm.Nombre = Convert.ToString(tabla.Rows[0][2]);
                         frmm.Cargo = Convert.ToString(tabla.Rows[0][3]);
-                        FrmAutorizado frmAutorizados = new FrmAutorizado(Convert.ToString(tabla.Rows[0][0]), Convert.ToString(tabla.Rows[0][3]));
+                        frmm.IdEstacionamiento = estacionamiento.IdEstacionamiento;
+                        FrmAutorizado frmAutorizados = new FrmAutorizado(Convert.ToString(tabla.Rows[0][0]), Convert.ToString(tabla.Rows[0][3]), estacionamiento.IdEstacionamiento);
                         frmm.Show(this);
                         this.Hide();
                     }

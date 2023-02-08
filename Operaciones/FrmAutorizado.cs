@@ -14,14 +14,19 @@ namespace Operaciones
 {
     public partial class FrmAutorizado : Form
     {
-       
 
+        public string Cargo;
+        public string Documento;
+        public long IdEstacionamiento;
         FrmMenu menu = new FrmMenu();
         AutorizacionesViewModel autorizacionesView = new AutorizacionesViewModel();
         PersonasAutorizadas personasAutorizadas = new PersonasAutorizadas();
-        public FrmAutorizado(string documento, string cargo)
+        public FrmAutorizado(string documento, string cargo, long idEstacionamiento)
         {            
             InitializeComponent();
+            this.Cargo= cargo;
+            this.Documento= documento;
+            this.IdEstacionamiento = idEstacionamiento;
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
@@ -32,7 +37,7 @@ namespace Operaciones
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
-
+            InsertarPersonasAutorizadas();
         }
 
         private void iconButton3_Click(object sender, EventArgs e)
@@ -79,8 +84,8 @@ namespace Operaciones
             txtPlaca3.Enabled = true;
             txtPlaca4.Enabled = true;
             txtPlaca5.Enabled = true;
-            //DtmFechaFin.Enabled = true;
-            //DtmFechaInicio.Enabled = true;
+            DtmFechaFin.Enabled = true;
+            DtmFechaInicio.Enabled = true;
 
         }
         private void MensajeError(string Mensaje)
@@ -189,6 +194,43 @@ namespace Operaciones
 
         }
 
+        public void InsertarPersonasAutorizadas()
+        {
+            string rta = "";
+            try
+            {
+                personasAutorizadas.Documento=txtDocumento.Text;
+                personasAutorizadas.IdAutorizado = Convert.ToInt64(cboAutorizados.SelectedValue);
+                personasAutorizadas.NombreApellidos=txtNombreApellidos.Text;
+                personasAutorizadas.NombreEmpresa=txtEmpresa.Text; 
+                personasAutorizadas.Nit=TxtNit.Text;
+                personasAutorizadas.Telefono=txtTelefono.Text;
+                personasAutorizadas.Email = txtEmail.Text;
+                personasAutorizadas.Placa1 = txtPlaca1.Text;
+                personasAutorizadas.Placa2= txtPlaca2.Text;
+                personasAutorizadas.Placa3= txtPlaca3.Text;
+                personasAutorizadas.Placa4= txtPlaca4.Text;
+                personasAutorizadas.Placa5= txtPlaca5.Text;
+                personasAutorizadas.DocumentoUsuarioCreacion = Convert.ToInt64(Documento);
+                personasAutorizadas.IdEstacionamiento = Convert.ToInt64(IdEstacionamiento);
+
+                rta = PersonasAutorizadasController.InsertarAutorizados(personasAutorizadas);
+                if (rta.Equals("OK"))
+                {
+                    MensajeOk("Registro guardado correctamente");
+                }
+                else
+                {
+                    MensajeError(rta);
+                }
+            }
+            catch (Exception ex )
+            {
+
+                throw ex ;
+            }
+        }
+
         #endregion
 
         private void DvgListadoPersonasAutorizadas_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -199,24 +241,63 @@ namespace Operaciones
                 ChkEditar.Value = !Convert.ToBoolean(ChkEditar.Value);
                 if (Convert.ToBoolean(ChkEditar.Value) == true)
                 {
-                    txtDocumento.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Documento"].Value);
-                    CargarAutorizacionesPorId();
-                    txtNombreApellidos.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["NombreApellidos"].Value);
-                    txtEmpresa.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["NombreEmpresa"].Value);
-                    TxtNit.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Nit"].Value);
-                    txtTelefono.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Telefono"].Value);
-                    txtEmail.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Email"].Value);
-                    txtPlaca1.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Placa1"].Value);
-                    txtPlaca2.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Placa2"].Value);
-                    txtPlaca3.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Placa3"].Value);
-                    txtPlaca4.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Placa4"].Value);
-                    txtPlaca5.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Placa5"].Value);
-                    DtmFechaInicio.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["FechaInicio"].Value);
-                    DtmFechaFin.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["FechaFin"].Value);
-                    Bloquear();
-                    cboAutorizados.Enabled = true;
-                    DtmFechaInicio.Enabled = true;
-                    DtmFechaFin.Enabled = true;
+                    if (Cargo == "ENCARGADO")
+                    {
+                        txtDocumento.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Documento"].Value);
+                        CargarAutorizacionesPorId();
+                        txtNombreApellidos.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["NombreApellidos"].Value);
+                        txtEmpresa.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["NombreEmpresa"].Value);
+                        TxtNit.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Nit"].Value);
+                        txtTelefono.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Telefono"].Value);
+                        txtEmail.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Email"].Value);
+                        txtPlaca1.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Placa1"].Value);
+                        txtPlaca2.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Placa2"].Value);
+                        txtPlaca3.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Placa3"].Value);
+                        txtPlaca4.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Placa4"].Value);
+                        txtPlaca5.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Placa5"].Value);
+                        DtmFechaInicio.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["FechaInicio"].Value);
+                        DtmFechaFin.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["FechaFin"].Value);
+                        Bloquear();
+                        cboAutorizados.Enabled = true;
+                        DtmFechaInicio.Enabled = true;
+                        DtmFechaFin.Enabled = true;
+                    }
+                    else if (Cargo == "CONTROL INTERNO" || Cargo == "ADMINISTRATIVO")
+                    {
+                        txtDocumento.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Documento"].Value);
+                        CargarAutorizacionesPorId();
+                        txtNombreApellidos.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["NombreApellidos"].Value);
+                        txtEmpresa.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["NombreEmpresa"].Value);
+                        TxtNit.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Nit"].Value);
+                        txtTelefono.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Telefono"].Value);
+                        txtEmail.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Email"].Value);
+                        txtPlaca1.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Placa1"].Value);
+                        txtPlaca2.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Placa2"].Value);
+                        txtPlaca3.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Placa3"].Value);
+                        txtPlaca4.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Placa4"].Value);
+                        txtPlaca5.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Placa5"].Value);
+                        DtmFechaInicio.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["FechaInicio"].Value);
+                        DtmFechaFin.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["FechaFin"].Value);
+                        Desbloquear();
+                    }
+                    else
+                    {
+                        txtDocumento.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Documento"].Value);
+                        CargarAutorizacionesPorId();
+                        txtNombreApellidos.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["NombreApellidos"].Value);
+                        txtEmpresa.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["NombreEmpresa"].Value);
+                        TxtNit.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Nit"].Value);
+                        txtTelefono.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Telefono"].Value);
+                        txtEmail.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Email"].Value);
+                        txtPlaca1.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Placa1"].Value);
+                        txtPlaca2.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Placa2"].Value);
+                        txtPlaca3.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Placa3"].Value);
+                        txtPlaca4.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Placa4"].Value);
+                        txtPlaca5.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Placa5"].Value);
+                        DtmFechaInicio.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["FechaInicio"].Value);
+                        DtmFechaFin.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["FechaFin"].Value);
+                        Bloquear();
+                    }
 
                 }
 

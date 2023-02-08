@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAutorizado));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DtmFechaFin = new System.Windows.Forms.DateTimePicker();
             this.DtmFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
@@ -78,18 +79,20 @@
             // 
             // DtmFechaFin
             // 
+            this.DtmFechaFin.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
             this.DtmFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DtmFechaFin.Location = new System.Drawing.Point(590, 349);
             this.DtmFechaFin.Name = "DtmFechaFin";
-            this.DtmFechaFin.Size = new System.Drawing.Size(179, 20);
+            this.DtmFechaFin.Size = new System.Drawing.Size(179, 26);
             this.DtmFechaFin.TabIndex = 59;
             // 
             // DtmFechaInicio
             // 
+            this.DtmFechaInicio.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
             this.DtmFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DtmFechaInicio.Location = new System.Drawing.Point(263, 351);
             this.DtmFechaInicio.Name = "DtmFechaInicio";
-            this.DtmFechaInicio.Size = new System.Drawing.Size(179, 20);
+            this.DtmFechaInicio.Size = new System.Drawing.Size(179, 26);
             this.DtmFechaInicio.TabIndex = 58;
             // 
             // label13
@@ -153,6 +156,14 @@
             this.DvgListadoPersonasAutorizadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DvgListadoPersonasAutorizadas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Editar});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.WindowFrame;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MediumAquamarine;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DvgListadoPersonasAutorizadas.DefaultCellStyle = dataGridViewCellStyle1;
             this.DvgListadoPersonasAutorizadas.Location = new System.Drawing.Point(20, 59);
             this.DvgListadoPersonasAutorizadas.Name = "DvgListadoPersonasAutorizadas";
             this.DvgListadoPersonasAutorizadas.Size = new System.Drawing.Size(881, 128);

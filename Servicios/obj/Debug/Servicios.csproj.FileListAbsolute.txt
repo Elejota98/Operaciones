@@ -7,3 +7,12 @@ C:\Users\Administrador\source\repos\Operaciones\Servicios\obj\Debug\Servicios.cs
 C:\Users\Administrador\source\repos\Operaciones\Servicios\obj\Debug\Servicios.csproj.CopyComplete
 C:\Users\Administrador\source\repos\Operaciones\Servicios\obj\Debug\Servicios.dll
 C:\Users\Administrador\source\repos\Operaciones\Servicios\obj\Debug\Servicios.pdb
+D:\PROYECTOS\LJ\Operaciones\Servicios\bin\Debug\Servicios.dll
+D:\PROYECTOS\LJ\Operaciones\Servicios\bin\Debug\Servicios.pdb
+D:\PROYECTOS\LJ\Operaciones\Servicios\bin\Debug\Modelo.dll
+D:\PROYECTOS\LJ\Operaciones\Servicios\bin\Debug\Modelo.pdb
+D:\PROYECTOS\LJ\Operaciones\Servicios\obj\Debug\Servicios.csproj.AssemblyReference.cache
+D:\PROYECTOS\LJ\Operaciones\Servicios\obj\Debug\Servicios.csproj.CoreCompileInputs.cache
+D:\PROYECTOS\LJ\Operaciones\Servicios\obj\Debug\Servicios.csproj.CopyComplete
+D:\PROYECTOS\LJ\Operaciones\Servicios\obj\Debug\Servicios.dll
+D:\PROYECTOS\LJ\Operaciones\Servicios\obj\Debug\Servicios.pdb

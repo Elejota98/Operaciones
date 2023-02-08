@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -25,6 +26,19 @@ namespace Controlador
         {
             RepositorioAutorizados Datos = new RepositorioAutorizados();
             return Datos.ListarAutorizacionesPorId(autorizacionesViewModel);
+        }
+        public static string InsertarAutorizados(PersonasAutorizadas personasAutorizadas)
+        {
+            RepositorioAutorizados Datos = new RepositorioAutorizados();
+            if(personasAutorizadas.Documento == string.Empty)
+            {
+                return "Error al guardar el registro";
+            }
+            else
+            {
+                return Datos.InsertarAutorizado(personasAutorizadas);
+            }
+
         }
     }
 }
