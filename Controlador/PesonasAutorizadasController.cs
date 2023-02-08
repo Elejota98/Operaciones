@@ -57,5 +57,21 @@ namespace Controlador
             }
 
         }
+        public static string ActualizarAutorizados(PersonasAutorizadas personasAutorizadas)
+        {
+            RepositorioAutorizados Datos = new RepositorioAutorizados();
+            if(personasAutorizadas.NombreApellidos == string.Empty)
+            {
+                return "No se puede realizar el registro, es necesario que ingrese un nombre";
+            }
+            else if (personasAutorizadas.IdAutorizado == null)
+            {
+                return "Por favor selecciones al menos una autorización";
+            }
+            else
+            {
+                return Datos.ActualizarAutoizado(personasAutorizadas);
+            }
+        }
     }
 }

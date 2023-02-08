@@ -121,6 +121,41 @@ namespace Servicios
             return rta;
             
         }
+        public string ActualizarAutoizado(PersonasAutorizadas personasAutorizadas)
+        {
+            string rta = "";
+            DataTable tabla = new DataTable();
+            SqlConnection sqlCon = new SqlConnection();
+            try
+            {
+                string fechaInicio;
+                string fechaFin;
+                fechaInicio = personasAutorizadas.FechaInicio.Year + "-" + personasAutorizadas.FechaInicio.Day + "-" + personasAutorizadas.FechaInicio.Month + " 23:59:59";
+                fechaFin = personasAutorizadas.FechaFin.Year + "-" + personasAutorizadas.FechaFin.Day + "-" + personasAutorizadas.FechaFin.Month + " 23:59:59";
+                sqlCon = Conexion.getInstancia().CrearConexion();
+                string cadena = ("UPDATE T_PersonasAutorizadas SET IdAutorizacion='" + personasAutorizadas.IdAutorizado + "', " +
+                    "NombreApellidos='" + personasAutorizadas.NombreApellidos + "', IdTarjeta='" + personasAutorizadas.IdTarjeta + "', " + 
+                    "NombreEmpresa='" + personasAutorizadas.NombreEmpresa + "', Nit='" + personasAutorizadas.Nit + "',Estado='" + personasAutorizadas.Estado + 
+                    "', FechaInicio='" + fechaInicio + "', " + 
+                    "FechaFin='" + fechaFin + "'," + " Telefono='" + personasAutorizadas.Telefono + 
+                    "', Email='" + personasAutorizadas.Email + "', Placa1='" + personasAutorizadas.Placa1 + "', Placa2='" + personasAutorizadas.Placa2 + "'," + 
+                    " Placa3='" + personasAutorizadas.Placa3+"', Placa4='"+personasAutorizadas.Placa4+"', Placa5='"+personasAutorizadas.Placa5+"' " +
+                    "WHERE Documento='"+personasAutorizadas.Documento+"' AND IdEstacionamiento='"+personasAutorizadas.IdEstacionamiento+"'");
+                SqlCommand comando = new SqlCommand(cadena,sqlCon); 
+                sqlCon.Open();
+                comando.ExecuteNonQuery();
+                rta = "OK";
+            }
+            catch (Exception ex)
+            {
+                throw ex ;
+            }
+            finally
+            {
+                if(sqlCon.State==ConnectionState.Open) sqlCon.Close();
+            }
+            return rta;
+        }
 
 
     }

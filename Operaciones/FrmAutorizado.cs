@@ -72,6 +72,7 @@ namespace Operaciones
             txtPlaca5.Enabled = false;
             DtmFechaFin.Enabled = false;
             DvgListadoPersonasAutorizadas.Columns[0].Visible = false;
+            chkEstado.Enabled= false;
 
         }
         public void Desbloquear()
@@ -90,6 +91,7 @@ namespace Operaciones
             txtPlaca5.Enabled = true;
             DtmFechaFin.Enabled = true;
             DtmFechaInicio.Enabled = true;
+            chkEstado.Enabled = true;
 
         }
         private void MensajeError(string Mensaje)
@@ -195,6 +197,7 @@ namespace Operaciones
             txtDocumentoBuscar.Text = "";
             txtPlaca1Buscar.Text = "";
             txtPlaca2Buscar.Text = "";
+            chkEstado.Checked= false;
 
         }
 
@@ -235,6 +238,48 @@ namespace Operaciones
                 throw ex ;
             }
         }
+        public void ActualizarPersonasAutorizadas()
+        {
+            string rta = "";
+            try
+            {
+                personasAutorizadas.Documento = txtDocumento.Text;
+                personasAutorizadas.IdAutorizado = Convert.ToInt64(cboAutorizados.SelectedValue);
+                personasAutorizadas.NombreApellidos = txtNombreApellidos.Text;
+                personasAutorizadas.NombreEmpresa = txtEmpresa.Text;
+                personasAutorizadas.Nit = TxtNit.Text;
+                personasAutorizadas.Telefono = txtTelefono.Text;
+                personasAutorizadas.Email = txtEmail.Text;
+                personasAutorizadas.Placa1 = txtPlaca1.Text;
+                personasAutorizadas.Placa2 = txtPlaca2.Text;
+                personasAutorizadas.Placa3 = txtPlaca3.Text;
+                personasAutorizadas.Placa4 = txtPlaca4.Text;
+                personasAutorizadas.Placa5 = txtPlaca5.Text;
+                personasAutorizadas.DocumentoUsuarioCreacion = Convert.ToInt64(Documento);
+                personasAutorizadas.IdEstacionamiento = Convert.ToInt64(IdEstacionamiento);
+                personasAutorizadas.Estado = chkEstado.Checked;
+                personasAutorizadas.FechaInicio = Convert.ToDateTime(DtmFechaInicio.Value.ToString());
+                personasAutorizadas.FechaFin = Convert.ToDateTime(DtmFechaFin.Value.ToString());
+                rta = PersonasAutorizadasController.ActualizarAutorizados(personasAutorizadas);
+                if (rta.Equals("OK"))
+                {
+                    MensajeOk("Datos actualizados correctamente");
+                    Limpiar();
+                    btnActualizar.Visible = false;
+                    btnGuardar.Visible = true;
+                }
+                else
+                {
+                    MensajeError(rta);
+                }
+
+            }
+            catch (Exception ex )
+            {
+
+                throw ex ;
+            }
+        }
 
         #endregion
 
@@ -262,6 +307,15 @@ namespace Operaciones
                         txtPlaca5.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Placa5"].Value);
                         DtmFechaInicio.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["FechaInicio"].Value);
                         DtmFechaFin.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["FechaFin"].Value);
+                        Boolean Estado = Convert.ToBoolean(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Estado"].Value);
+                        if (Estado == true)
+                        {
+                            chkEstado.Checked = true;
+                        }
+                        else
+                        {
+                            chkEstado.Checked = false;
+                        }
                         Bloquear();
                         cboAutorizados.Enabled = true;
                         //DtmFechaInicio.Enabled = true;
@@ -286,6 +340,15 @@ namespace Operaciones
                         txtPlaca5.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Placa5"].Value);
                         DtmFechaInicio.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["FechaInicio"].Value);
                         DtmFechaFin.Text = Convert.ToString(DvgListadoPersonasAutorizadas.CurrentRow.Cells["FechaFin"].Value);
+                        Boolean Estado = Convert.ToBoolean(DvgListadoPersonasAutorizadas.CurrentRow.Cells["Estado"].Value);
+                        if (Estado == true)
+                        {
+                            chkEstado.Checked = true;
+                        }
+                        else
+                        {
+                            chkEstado.Checked = false;
+                        }
                         Desbloquear();
                         btnActualizar.Visible = true;
                         btnGuardar.Visible = false;
@@ -336,6 +399,11 @@ namespace Operaciones
                 e.Handled = true;
                 return;
             }
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            ActualizarPersonasAutorizadas();
         }
     }
 }

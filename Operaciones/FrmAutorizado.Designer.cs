@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAutorizado));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DtmFechaFin = new System.Windows.Forms.DateTimePicker();
             this.DtmFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
@@ -73,6 +73,8 @@
             this.txtEmpresa = new System.Windows.Forms.TextBox();
             this.txtNombreApellidos = new System.Windows.Forms.TextBox();
             this.txtDocumento = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.chkEstado = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DvgListadoPersonasAutorizadas)).BeginInit();
             this.PanelAcciones.SuspendLayout();
@@ -80,18 +82,20 @@
             // 
             // DtmFechaFin
             // 
+            this.DtmFechaFin.CustomFormat = "yyyy-MM-dd";
             this.DtmFechaFin.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
             this.DtmFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DtmFechaFin.Location = new System.Drawing.Point(590, 349);
+            this.DtmFechaFin.Location = new System.Drawing.Point(590, 359);
             this.DtmFechaFin.Name = "DtmFechaFin";
             this.DtmFechaFin.Size = new System.Drawing.Size(179, 26);
             this.DtmFechaFin.TabIndex = 59;
             // 
             // DtmFechaInicio
             // 
+            this.DtmFechaInicio.CustomFormat = "yyyy-MM-dd";
             this.DtmFechaInicio.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
             this.DtmFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DtmFechaInicio.Location = new System.Drawing.Point(263, 351);
+            this.DtmFechaInicio.Location = new System.Drawing.Point(263, 361);
             this.DtmFechaInicio.Name = "DtmFechaInicio";
             this.DtmFechaInicio.Size = new System.Drawing.Size(179, 26);
             this.DtmFechaInicio.TabIndex = 58;
@@ -100,7 +104,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(479, 351);
+            this.label13.Location = new System.Drawing.Point(479, 361);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(86, 18);
             this.label13.TabIndex = 57;
@@ -110,7 +114,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(71, 351);
+            this.label1.Location = new System.Drawing.Point(71, 361);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 18);
             this.label1.TabIndex = 56;
@@ -127,9 +131,9 @@
             this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.label14);
-            this.panel1.Location = new System.Drawing.Point(12, 390);
+            this.panel1.Location = new System.Drawing.Point(12, 399);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(945, 212);
+            this.panel1.Size = new System.Drawing.Size(945, 203);
             this.panel1.TabIndex = 55;
             // 
             // iconButton4
@@ -158,14 +162,14 @@
             this.DvgListadoPersonasAutorizadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DvgListadoPersonasAutorizadas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Editar});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.WindowFrame;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MediumAquamarine;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DvgListadoPersonasAutorizadas.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.WindowFrame;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MediumAquamarine;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DvgListadoPersonasAutorizadas.DefaultCellStyle = dataGridViewCellStyle2;
             this.DvgListadoPersonasAutorizadas.Location = new System.Drawing.Point(20, 59);
             this.DvgListadoPersonasAutorizadas.Name = "DvgListadoPersonasAutorizadas";
             this.DvgListadoPersonasAutorizadas.ReadOnly = true;
@@ -263,6 +267,7 @@
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // iconButton3
             // 
@@ -328,7 +333,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(488, 298);
+            this.label12.Location = new System.Drawing.Point(488, 308);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(67, 18);
             this.label12.TabIndex = 53;
@@ -338,7 +343,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(71, 197);
+            this.label11.Location = new System.Drawing.Point(71, 207);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(79, 18);
             this.label11.TabIndex = 52;
@@ -348,7 +353,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(71, 91);
+            this.label10.Location = new System.Drawing.Point(71, 101);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(109, 18);
             this.label10.TabIndex = 51;
@@ -358,7 +363,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(488, 257);
+            this.label9.Location = new System.Drawing.Point(488, 267);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(67, 18);
             this.label9.TabIndex = 50;
@@ -368,7 +373,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(488, 204);
+            this.label8.Location = new System.Drawing.Point(488, 214);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(67, 18);
             this.label8.TabIndex = 49;
@@ -378,7 +383,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(488, 150);
+            this.label7.Location = new System.Drawing.Point(488, 160);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(67, 18);
             this.label7.TabIndex = 48;
@@ -388,7 +393,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(489, 92);
+            this.label6.Location = new System.Drawing.Point(489, 102);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 18);
             this.label6.TabIndex = 47;
@@ -398,7 +403,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(489, 33);
+            this.label5.Location = new System.Drawing.Point(489, 43);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(51, 18);
             this.label5.TabIndex = 46;
@@ -408,7 +413,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(71, 301);
+            this.label4.Location = new System.Drawing.Point(71, 311);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 18);
             this.label4.TabIndex = 45;
@@ -418,7 +423,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(71, 249);
+            this.label3.Location = new System.Drawing.Point(71, 259);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(30, 18);
             this.label3.TabIndex = 44;
@@ -428,7 +433,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(71, 145);
+            this.label2.Location = new System.Drawing.Point(71, 155);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(148, 18);
             this.label2.TabIndex = 43;
@@ -438,7 +443,7 @@
             // 
             this.lblDocumento.AutoSize = true;
             this.lblDocumento.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDocumento.Location = new System.Drawing.Point(71, 33);
+            this.lblDocumento.Location = new System.Drawing.Point(71, 43);
             this.lblDocumento.Name = "lblDocumento";
             this.lblDocumento.Size = new System.Drawing.Size(100, 18);
             this.lblDocumento.TabIndex = 42;
@@ -448,7 +453,7 @@
             // 
             this.cboAutorizados.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboAutorizados.FormattingEnabled = true;
-            this.cboAutorizados.Location = new System.Drawing.Point(267, 84);
+            this.cboAutorizados.Location = new System.Drawing.Point(267, 94);
             this.cboAutorizados.Name = "cboAutorizados";
             this.cboAutorizados.Size = new System.Drawing.Size(196, 26);
             this.cboAutorizados.TabIndex = 41;
@@ -457,7 +462,7 @@
             // txtPlaca5
             // 
             this.txtPlaca5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPlaca5.Location = new System.Drawing.Point(594, 296);
+            this.txtPlaca5.Location = new System.Drawing.Point(594, 306);
             this.txtPlaca5.Name = "txtPlaca5";
             this.txtPlaca5.Size = new System.Drawing.Size(175, 26);
             this.txtPlaca5.TabIndex = 40;
@@ -465,7 +470,7 @@
             // txtPlaca4
             // 
             this.txtPlaca4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPlaca4.Location = new System.Drawing.Point(594, 249);
+            this.txtPlaca4.Location = new System.Drawing.Point(594, 259);
             this.txtPlaca4.Name = "txtPlaca4";
             this.txtPlaca4.Size = new System.Drawing.Size(175, 26);
             this.txtPlaca4.TabIndex = 39;
@@ -473,7 +478,7 @@
             // txtPlaca3
             // 
             this.txtPlaca3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPlaca3.Location = new System.Drawing.Point(594, 197);
+            this.txtPlaca3.Location = new System.Drawing.Point(594, 207);
             this.txtPlaca3.Name = "txtPlaca3";
             this.txtPlaca3.Size = new System.Drawing.Size(175, 26);
             this.txtPlaca3.TabIndex = 38;
@@ -481,7 +486,7 @@
             // txtPlaca2
             // 
             this.txtPlaca2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPlaca2.Location = new System.Drawing.Point(594, 142);
+            this.txtPlaca2.Location = new System.Drawing.Point(594, 152);
             this.txtPlaca2.Name = "txtPlaca2";
             this.txtPlaca2.Size = new System.Drawing.Size(175, 26);
             this.txtPlaca2.TabIndex = 37;
@@ -489,7 +494,7 @@
             // txtPlaca1
             // 
             this.txtPlaca1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPlaca1.Location = new System.Drawing.Point(594, 84);
+            this.txtPlaca1.Location = new System.Drawing.Point(594, 94);
             this.txtPlaca1.Name = "txtPlaca1";
             this.txtPlaca1.Size = new System.Drawing.Size(175, 26);
             this.txtPlaca1.TabIndex = 36;
@@ -497,7 +502,7 @@
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(594, 26);
+            this.txtEmail.Location = new System.Drawing.Point(594, 36);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(175, 26);
             this.txtEmail.TabIndex = 35;
@@ -505,7 +510,7 @@
             // txtTelefono
             // 
             this.txtTelefono.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(267, 298);
+            this.txtTelefono.Location = new System.Drawing.Point(267, 308);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(175, 26);
             this.txtTelefono.TabIndex = 34;
@@ -513,7 +518,7 @@
             // TxtNit
             // 
             this.TxtNit.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtNit.Location = new System.Drawing.Point(267, 250);
+            this.TxtNit.Location = new System.Drawing.Point(267, 260);
             this.TxtNit.Name = "TxtNit";
             this.TxtNit.Size = new System.Drawing.Size(175, 26);
             this.TxtNit.TabIndex = 33;
@@ -521,7 +526,7 @@
             // txtEmpresa
             // 
             this.txtEmpresa.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmpresa.Location = new System.Drawing.Point(267, 197);
+            this.txtEmpresa.Location = new System.Drawing.Point(267, 207);
             this.txtEmpresa.Name = "txtEmpresa";
             this.txtEmpresa.Size = new System.Drawing.Size(175, 26);
             this.txtEmpresa.TabIndex = 32;
@@ -529,7 +534,7 @@
             // txtNombreApellidos
             // 
             this.txtNombreApellidos.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreApellidos.Location = new System.Drawing.Point(267, 143);
+            this.txtNombreApellidos.Location = new System.Drawing.Point(267, 153);
             this.txtNombreApellidos.Name = "txtNombreApellidos";
             this.txtNombreApellidos.Size = new System.Drawing.Size(175, 26);
             this.txtNombreApellidos.TabIndex = 31;
@@ -537,17 +542,40 @@
             // txtDocumento
             // 
             this.txtDocumento.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDocumento.Location = new System.Drawing.Point(267, 26);
+            this.txtDocumento.Location = new System.Drawing.Point(267, 36);
             this.txtDocumento.Name = "txtDocumento";
             this.txtDocumento.Size = new System.Drawing.Size(175, 26);
             this.txtDocumento.TabIndex = 30;
             this.txtDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDocumento_KeyPress);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(107, 9);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(64, 18);
+            this.label17.TabIndex = 60;
+            this.label17.Text = "Estado";
+            // 
+            // chkEstado
+            // 
+            this.chkEstado.AutoSize = true;
+            this.chkEstado.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.chkEstado.Location = new System.Drawing.Point(267, 5);
+            this.chkEstado.Name = "chkEstado";
+            this.chkEstado.Size = new System.Drawing.Size(78, 22);
+            this.chkEstado.TabIndex = 61;
+            this.chkEstado.Text = "Activo";
+            this.chkEstado.UseVisualStyleBackColor = true;
             // 
             // FrmAutorizado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(969, 614);
+            this.Controls.Add(this.chkEstado);
+            this.Controls.Add(this.label17);
             this.Controls.Add(this.DtmFechaFin);
             this.Controls.Add(this.DtmFechaInicio);
             this.Controls.Add(this.label13);
@@ -635,5 +663,7 @@
         private System.Windows.Forms.TextBox txtDocumento;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Editar;
         private FontAwesome.Sharp.IconButton btnActualizar;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.CheckBox chkEstado;
     }
 }
