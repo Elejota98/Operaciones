@@ -30,17 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.lblNombre = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.PanelMenu = new System.Windows.Forms.Panel();
+            this.PanelSubMenu2 = new System.Windows.Forms.Panel();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.PanelSubMenu1 = new System.Windows.Forms.Panel();
             this.BtnPersonasAutorizadas = new FontAwesome.Sharp.IconButton();
             this.btnAutorizados = new FontAwesome.Sharp.IconButton();
             this.PanelFormulario = new System.Windows.Forms.Panel();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.PanelMenu.SuspendLayout();
+            this.PanelSubMenu2.SuspendLayout();
             this.PanelSubMenu1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,6 +60,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1169, 100);
             this.panel1.TabIndex = 0;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.FlatAppearance.BorderSize = 0;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
+            this.btnSalir.Location = new System.Drawing.Point(1131, 3);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(38, 37);
+            this.btnSalir.TabIndex = 3;
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // lblNombre
             // 
@@ -92,6 +108,8 @@
             // PanelMenu
             // 
             this.PanelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(180)))), ((int)(((byte)(77)))));
+            this.PanelMenu.Controls.Add(this.PanelSubMenu2);
+            this.PanelMenu.Controls.Add(this.iconButton1);
             this.PanelMenu.Controls.Add(this.PanelSubMenu1);
             this.PanelMenu.Controls.Add(this.btnAutorizados);
             this.PanelMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -100,13 +118,62 @@
             this.PanelMenu.Size = new System.Drawing.Size(200, 585);
             this.PanelMenu.TabIndex = 1;
             // 
+            // PanelSubMenu2
+            // 
+            this.PanelSubMenu2.Controls.Add(this.iconButton2);
+            this.PanelSubMenu2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelSubMenu2.Location = new System.Drawing.Point(0, 172);
+            this.PanelSubMenu2.Name = "PanelSubMenu2";
+            this.PanelSubMenu2.Size = new System.Drawing.Size(200, 100);
+            this.PanelSubMenu2.TabIndex = 0;
+            // 
+            // iconButton2
+            // 
+            this.iconButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(88)))), ((int)(((byte)(88)))));
+            this.iconButton2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton2.FlatAppearance.BorderSize = 0;
+            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F);
+            this.iconButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(180)))), ((int)(((byte)(77)))));
+            this.iconButton2.Icon = FontAwesome.Sharp.IconChar.ListUl;
+            this.iconButton2.IconColor = System.Drawing.Color.White;
+            this.iconButton2.IconSize = 16;
+            this.iconButton2.Image = ((System.Drawing.Image)(resources.GetObject("iconButton2.Image")));
+            this.iconButton2.Location = new System.Drawing.Point(0, 0);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Size = new System.Drawing.Size(200, 59);
+            this.iconButton2.TabIndex = 3;
+            this.iconButton2.Text = "Saldo En Linea";
+            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton2.UseVisualStyleBackColor = false;
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F);
+            this.iconButton1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.iconButton1.Icon = FontAwesome.Sharp.IconChar.ChevronDown;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
+            this.iconButton1.IconSize = 16;
+            this.iconButton1.Image = ((System.Drawing.Image)(resources.GetObject("iconButton1.Image")));
+            this.iconButton1.Location = new System.Drawing.Point(0, 119);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(200, 53);
+            this.iconButton1.TabIndex = 3;
+            this.iconButton1.Text = "Reportes";
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
             // PanelSubMenu1
             // 
             this.PanelSubMenu1.Controls.Add(this.BtnPersonasAutorizadas);
             this.PanelSubMenu1.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelSubMenu1.Location = new System.Drawing.Point(0, 53);
             this.PanelSubMenu1.Name = "PanelSubMenu1";
-            this.PanelSubMenu1.Size = new System.Drawing.Size(200, 131);
+            this.PanelSubMenu1.Size = new System.Drawing.Size(200, 66);
             this.PanelSubMenu1.TabIndex = 2;
             // 
             // BtnPersonasAutorizadas
@@ -117,7 +184,7 @@
             this.BtnPersonasAutorizadas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnPersonasAutorizadas.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F);
             this.BtnPersonasAutorizadas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(180)))), ((int)(((byte)(77)))));
-            this.BtnPersonasAutorizadas.Icon = FontAwesome.Sharp.IconChar.HddO;
+            this.BtnPersonasAutorizadas.Icon = FontAwesome.Sharp.IconChar.User;
             this.BtnPersonasAutorizadas.IconColor = System.Drawing.Color.White;
             this.BtnPersonasAutorizadas.IconSize = 16;
             this.BtnPersonasAutorizadas.Image = ((System.Drawing.Image)(resources.GetObject("BtnPersonasAutorizadas.Image")));
@@ -137,7 +204,7 @@
             this.btnAutorizados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAutorizados.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F);
             this.btnAutorizados.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAutorizados.Icon = FontAwesome.Sharp.IconChar.User;
+            this.btnAutorizados.Icon = FontAwesome.Sharp.IconChar.ChevronDown;
             this.btnAutorizados.IconColor = System.Drawing.Color.White;
             this.btnAutorizados.IconSize = 16;
             this.btnAutorizados.Image = ((System.Drawing.Image)(resources.GetObject("btnAutorizados.Image")));
@@ -158,18 +225,6 @@
             this.PanelFormulario.Size = new System.Drawing.Size(969, 585);
             this.PanelFormulario.TabIndex = 2;
             // 
-            // btnSalir
-            // 
-            this.btnSalir.FlatAppearance.BorderSize = 0;
-            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
-            this.btnSalir.Location = new System.Drawing.Point(1131, 3);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(38, 37);
-            this.btnSalir.TabIndex = 3;
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -186,6 +241,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.PanelMenu.ResumeLayout(false);
+            this.PanelSubMenu2.ResumeLayout(false);
             this.PanelSubMenu1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -203,5 +259,8 @@
         private FontAwesome.Sharp.IconButton btnAutorizados;
         private System.Windows.Forms.Panel PanelFormulario;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Panel PanelSubMenu2;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton iconButton2;
     }
 }

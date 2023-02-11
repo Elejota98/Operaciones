@@ -46,6 +46,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositorioAutorizados.cs" />
     <Compile Include="RepositorioLogin.cs" />
+    <Compile Include="RepositorioTarjetas.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Modelo\Modelo.csproj">

@@ -38,3 +38,8 @@ D:\PROYECTOS\LJ\Operaciones\Operaciones\obj\Debug\Operaciones.csproj.CoreCompile
 D:\PROYECTOS\LJ\Operaciones\Operaciones\obj\Debug\Operaciones.csproj.CopyComplete
 D:\PROYECTOS\LJ\Operaciones\Operaciones\obj\Debug\Operaciones.exe
 D:\PROYECTOS\LJ\Operaciones\Operaciones\obj\Debug\Operaciones.pdb
+C:\Users\Administrador\source\repos\Operaciones\Operaciones\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Users\Administrador\source\repos\Operaciones\Operaciones\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\Administrador\source\repos\Operaciones\Operaciones\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Users\Administrador\source\repos\Operaciones\Operaciones\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\Administrador\source\repos\Operaciones\Operaciones\bin\Debug\Microsoft.SqlServer.Types.dll

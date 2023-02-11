@@ -44,6 +44,7 @@
     <Compile Include="LoginController.cs" />
     <Compile Include="PesonasAutorizadasController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TarjetasController.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Modelo\Modelo.csproj">

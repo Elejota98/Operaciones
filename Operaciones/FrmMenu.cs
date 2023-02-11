@@ -50,8 +50,8 @@ namespace Operaciones
         {
             if (PanelSubMenu1.Visible == true)
                 PanelSubMenu1.Visible = false;
-            //if (PanelSubMenu2.Visible == true)
-            //    PanelSubMenu2.Visible = false;
+            if (PanelSubMenu2.Visible == true)
+                PanelSubMenu2.Visible = false;
             //if (PanelSubMenu3.Visible == true)
             //    PanelSubMenu3.Visible = false;
             //if (PanelSubMenu4.Visible == true)
@@ -66,7 +66,7 @@ namespace Operaciones
         {
 
             PanelSubMenu1.Visible = false;
-            //PanelSubMenu2.Visible = false;
+            PanelSubMenu2.Visible = false;
             //PanelSubMenu3.Visible = false;
             //PanelSubMenu4.Visible = false;
             //PanelSubMenu5.Visible = false;
@@ -111,6 +111,11 @@ namespace Operaciones
             FrmLogin frml = new FrmLogin();
             frml.Show();
             this.Hide();
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            showSubMenu(PanelSubMenu2);
         }
     }
 }

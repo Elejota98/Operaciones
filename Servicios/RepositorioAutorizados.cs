@@ -91,8 +91,7 @@ namespace Servicios
 
         public string InsertarAutorizado(PersonasAutorizadas personasAutorizadas) 
         {
-            string rta = "";
-            DataTable tabla = new DataTable();
+            string rta = "";    
             SqlConnection sqlCon = new SqlConnection();
             try
             {

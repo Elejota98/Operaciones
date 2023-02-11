@@ -46,6 +46,7 @@
     <Compile Include="Login.cs" />
     <Compile Include="PersonasAutorizadas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tarjetas.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -20,6 +20,7 @@ namespace Operaciones
         public long IdEstacionamiento;       
         AutorizacionesViewModel autorizacionesView = new AutorizacionesViewModel();
         PersonasAutorizadas personasAutorizadas = new PersonasAutorizadas();
+        Tarjetas tarjetas= new Tarjetas();
         public FrmAutorizado(string documento, string cargo, long idEstacionamiento)
         {            
             InitializeComponent();
@@ -224,8 +225,17 @@ namespace Operaciones
                 rta = PersonasAutorizadasController.InsertarAutorizados(personasAutorizadas);
                 if (rta.Equals("OK"))
                 {
-                    MensajeOk("Registro guardado correctamente");
-                    Limpiar();
+                    if (InsertarTarjetaInventario())
+                    {
+                        MensajeOk("Registro guardado correctamente");
+                        Limpiar();
+                        btnActualizar.Visible = false;
+                        btnGuardar.Visible = true;
+                    }
+                    else
+                    {
+                        MensajeError(rta);
+                    }
                 }
                 else
                 {
@@ -263,10 +273,8 @@ namespace Operaciones
                 rta = PersonasAutorizadasController.ActualizarAutorizados(personasAutorizadas);
                 if (rta.Equals("OK"))
                 {
-                    MensajeOk("Datos actualizados correctamente");
-                    Limpiar();
-                    btnActualizar.Visible = false;
-                    btnGuardar.Visible = true;
+                  MensajeOk("Datos actualizados correctamente");
+
                 }
                 else
                 {
@@ -280,6 +288,35 @@ namespace Operaciones
                 throw ex ;
             }
         }
+         
+        public bool InsertarTarjetaInventario()
+        {
+            string rta = "";
+            bool ok = false;
+            try
+            {
+                tarjetas.IdTarjeta = txtDocumento.Text;
+                tarjetas.IdEstacionamiento= Convert.ToInt64(IdEstacionamiento);
+                tarjetas.DocumentoUsuarioRegistro = Convert.ToInt32(Documento);
+                tarjetas.Estado = true;
+                rta = TarjetasController.InsertarTarjetaInventario(tarjetas);
+                if(rta.Equals("OK"))
+                {
+                    ok = true;
+                }
+                else
+                {
+                    return ok;
+                }
+                return ok;
+            }
+            catch (Exception ex )
+            {
+
+                throw ex ;
+            }
+        }
+
 
         #endregion
 
