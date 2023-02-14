@@ -39,6 +39,8 @@
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.PanelSubMenu1 = new System.Windows.Forms.Panel();
+            this.iconButton4 = new FontAwesome.Sharp.IconButton();
+            this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.BtnPersonasAutorizadas = new FontAwesome.Sharp.IconButton();
             this.btnAutorizados = new FontAwesome.Sharp.IconButton();
             this.PanelFormulario = new System.Windows.Forms.Panel();
@@ -122,7 +124,7 @@
             // 
             this.PanelSubMenu2.Controls.Add(this.iconButton2);
             this.PanelSubMenu2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelSubMenu2.Location = new System.Drawing.Point(0, 172);
+            this.PanelSubMenu2.Location = new System.Drawing.Point(0, 229);
             this.PanelSubMenu2.Name = "PanelSubMenu2";
             this.PanelSubMenu2.Size = new System.Drawing.Size(200, 100);
             this.PanelSubMenu2.TabIndex = 0;
@@ -158,7 +160,7 @@
             this.iconButton1.IconColor = System.Drawing.Color.White;
             this.iconButton1.IconSize = 16;
             this.iconButton1.Image = ((System.Drawing.Image)(resources.GetObject("iconButton1.Image")));
-            this.iconButton1.Location = new System.Drawing.Point(0, 119);
+            this.iconButton1.Location = new System.Drawing.Point(0, 176);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(200, 53);
             this.iconButton1.TabIndex = 3;
@@ -169,12 +171,54 @@
             // 
             // PanelSubMenu1
             // 
+            this.PanelSubMenu1.Controls.Add(this.iconButton4);
+            this.PanelSubMenu1.Controls.Add(this.iconButton3);
             this.PanelSubMenu1.Controls.Add(this.BtnPersonasAutorizadas);
             this.PanelSubMenu1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelSubMenu1.Location = new System.Drawing.Point(0, 53);
+            this.PanelSubMenu1.Location = new System.Drawing.Point(0, 47);
             this.PanelSubMenu1.Name = "PanelSubMenu1";
-            this.PanelSubMenu1.Size = new System.Drawing.Size(200, 66);
+            this.PanelSubMenu1.Size = new System.Drawing.Size(200, 129);
             this.PanelSubMenu1.TabIndex = 2;
+            // 
+            // iconButton4
+            // 
+            this.iconButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(88)))), ((int)(((byte)(88)))));
+            this.iconButton4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton4.FlatAppearance.BorderSize = 0;
+            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F);
+            this.iconButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(180)))), ((int)(((byte)(77)))));
+            this.iconButton4.Icon = FontAwesome.Sharp.IconChar.Calendar;
+            this.iconButton4.IconColor = System.Drawing.Color.White;
+            this.iconButton4.IconSize = 16;
+            this.iconButton4.Image = ((System.Drawing.Image)(resources.GetObject("iconButton4.Image")));
+            this.iconButton4.Location = new System.Drawing.Point(0, 81);
+            this.iconButton4.Name = "iconButton4";
+            this.iconButton4.Size = new System.Drawing.Size(200, 41);
+            this.iconButton4.TabIndex = 4;
+            this.iconButton4.Text = "Actualizar Salida";
+            this.iconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton4.UseVisualStyleBackColor = false;
+            // 
+            // iconButton3
+            // 
+            this.iconButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(88)))), ((int)(((byte)(88)))));
+            this.iconButton3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton3.FlatAppearance.BorderSize = 0;
+            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F);
+            this.iconButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(180)))), ((int)(((byte)(77)))));
+            this.iconButton3.Icon = FontAwesome.Sharp.IconChar.PencilSquareO;
+            this.iconButton3.IconColor = System.Drawing.Color.White;
+            this.iconButton3.IconSize = 16;
+            this.iconButton3.Image = ((System.Drawing.Image)(resources.GetObject("iconButton3.Image")));
+            this.iconButton3.Location = new System.Drawing.Point(0, 40);
+            this.iconButton3.Name = "iconButton3";
+            this.iconButton3.Size = new System.Drawing.Size(200, 41);
+            this.iconButton3.TabIndex = 3;
+            this.iconButton3.Text = "Reposición Sin Cobro";
+            this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton3.UseVisualStyleBackColor = false;
             // 
             // BtnPersonasAutorizadas
             // 
@@ -190,7 +234,7 @@
             this.BtnPersonasAutorizadas.Image = ((System.Drawing.Image)(resources.GetObject("BtnPersonasAutorizadas.Image")));
             this.BtnPersonasAutorizadas.Location = new System.Drawing.Point(0, 0);
             this.BtnPersonasAutorizadas.Name = "BtnPersonasAutorizadas";
-            this.BtnPersonasAutorizadas.Size = new System.Drawing.Size(200, 59);
+            this.BtnPersonasAutorizadas.Size = new System.Drawing.Size(200, 40);
             this.BtnPersonasAutorizadas.TabIndex = 2;
             this.BtnPersonasAutorizadas.Text = "Personas Autorizadas";
             this.BtnPersonasAutorizadas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -210,7 +254,7 @@
             this.btnAutorizados.Image = ((System.Drawing.Image)(resources.GetObject("btnAutorizados.Image")));
             this.btnAutorizados.Location = new System.Drawing.Point(0, 0);
             this.btnAutorizados.Name = "btnAutorizados";
-            this.btnAutorizados.Size = new System.Drawing.Size(200, 53);
+            this.btnAutorizados.Size = new System.Drawing.Size(200, 47);
             this.btnAutorizados.TabIndex = 2;
             this.btnAutorizados.Text = "Autorizados";
             this.btnAutorizados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -262,5 +306,7 @@
         private System.Windows.Forms.Panel PanelSubMenu2;
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton iconButton3;
+        private FontAwesome.Sharp.IconButton iconButton4;
     }
 }
