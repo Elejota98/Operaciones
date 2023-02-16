@@ -117,5 +117,10 @@ namespace Operaciones
         {
             showSubMenu(PanelSubMenu2);
         }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new FrmSaldoEnLinea());
+        }
     }
 }

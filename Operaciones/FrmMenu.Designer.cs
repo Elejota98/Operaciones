@@ -35,6 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.PanelMenu = new System.Windows.Forms.Panel();
+            this.btnPuntoDePago = new FontAwesome.Sharp.IconButton();
             this.PanelSubMenu2 = new System.Windows.Forms.Panel();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
@@ -110,6 +111,7 @@
             // PanelMenu
             // 
             this.PanelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(180)))), ((int)(((byte)(77)))));
+            this.PanelMenu.Controls.Add(this.btnPuntoDePago);
             this.PanelMenu.Controls.Add(this.PanelSubMenu2);
             this.PanelMenu.Controls.Add(this.iconButton1);
             this.PanelMenu.Controls.Add(this.PanelSubMenu1);
@@ -119,6 +121,25 @@
             this.PanelMenu.Name = "PanelMenu";
             this.PanelMenu.Size = new System.Drawing.Size(200, 585);
             this.PanelMenu.TabIndex = 1;
+            // 
+            // btnPuntoDePago
+            // 
+            this.btnPuntoDePago.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPuntoDePago.FlatAppearance.BorderSize = 0;
+            this.btnPuntoDePago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPuntoDePago.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F);
+            this.btnPuntoDePago.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPuntoDePago.Icon = FontAwesome.Sharp.IconChar.ChevronDown;
+            this.btnPuntoDePago.IconColor = System.Drawing.Color.White;
+            this.btnPuntoDePago.IconSize = 16;
+            this.btnPuntoDePago.Image = ((System.Drawing.Image)(resources.GetObject("btnPuntoDePago.Image")));
+            this.btnPuntoDePago.Location = new System.Drawing.Point(0, 329);
+            this.btnPuntoDePago.Name = "btnPuntoDePago";
+            this.btnPuntoDePago.Size = new System.Drawing.Size(200, 53);
+            this.btnPuntoDePago.TabIndex = 4;
+            this.btnPuntoDePago.Text = "Reportes";
+            this.btnPuntoDePago.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPuntoDePago.UseVisualStyleBackColor = true;
             // 
             // PanelSubMenu2
             // 
@@ -148,6 +169,7 @@
             this.iconButton2.Text = "Saldo En Linea";
             this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton2.UseVisualStyleBackColor = false;
+            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
             // 
             // iconButton1
             // 
@@ -308,5 +330,6 @@
         private FontAwesome.Sharp.IconButton iconButton2;
         private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton iconButton4;
+        private FontAwesome.Sharp.IconButton btnPuntoDePago;
     }
 }
