@@ -24,5 +24,34 @@ namespace Controlador
             return Datos.InsertarTarjetaInventario(tarjetas);
 
         }
+
+        public static CardResponse LimpiarReposicion(string password)
+        {
+            CardResponse oCardResponse = new CardResponse();
+            if (password == string.Empty)
+            {
+                oCardResponse.error = true;
+            }
+            else
+            {
+                oCardResponse.error = false;
+            }
+            return oCardResponse;
+        }
+        public static CardResponse CrearTarjetaAutorizadoSinReposicion(string password)
+        {
+            ServiciosTarjetas serviciosTarjetas = new ServiciosTarjetas();
+            CardResponse oCardResponse = new CardResponse();
+            if (password == string.Empty)
+            {
+                oCardResponse.error = true;
+            }
+            else
+            {
+                serviciosTarjetas.CreateAuthCardRepo(password);
+
+            }
+            return oCardResponse;
+        }
     }
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAutorizado));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DtmFechaFin = new System.Windows.Forms.DateTimePicker();
             this.DtmFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
@@ -162,14 +162,14 @@
             this.DvgListadoPersonasAutorizadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DvgListadoPersonasAutorizadas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Editar});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.WindowFrame;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MediumAquamarine;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DvgListadoPersonasAutorizadas.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.WindowFrame;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MediumAquamarine;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DvgListadoPersonasAutorizadas.DefaultCellStyle = dataGridViewCellStyle1;
             this.DvgListadoPersonasAutorizadas.Location = new System.Drawing.Point(20, 59);
             this.DvgListadoPersonasAutorizadas.Name = "DvgListadoPersonasAutorizadas";
             this.DvgListadoPersonasAutorizadas.ReadOnly = true;

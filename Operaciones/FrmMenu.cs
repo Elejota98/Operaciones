@@ -52,8 +52,8 @@ namespace Operaciones
                 PanelSubMenu1.Visible = false;
             if (PanelSubMenu2.Visible == true)
                 PanelSubMenu2.Visible = false;
-            //if (PanelSubMenu3.Visible == true)
-            //    PanelSubMenu3.Visible = false;
+            if (PanelSubMenu3.Visible == true)
+                PanelSubMenu3.Visible = false;
             //if (PanelSubMenu4.Visible == true)
             //    PanelSubMenu4.Visible = false;
             //if (PanelSubMenu5.Visible == true)
@@ -67,7 +67,7 @@ namespace Operaciones
 
             PanelSubMenu1.Visible = false;
             PanelSubMenu2.Visible = false;
-            //PanelSubMenu3.Visible = false;
+            PanelSubMenu3.Visible = false;
             //PanelSubMenu4.Visible = false;
             //PanelSubMenu5.Visible = false;
             //PanelSubMenu6.Visible = false;
@@ -120,7 +120,33 @@ namespace Operaciones
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
-            AbrirFormularioHijo(new FrmSaldoEnLinea());
+
+        }
+
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new FrmReposicionSinCobro(Documento, Cargo, IdEstacionamiento));
+
+            lblTitulo.Text = btnReposicionSinCobro.Text;
+        }
+
+        private void iconButton3_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new FrmAnularFac(Documento, Cargo, IdEstacionamiento));
+
+            lblTitulo.Text = btnAnularFac.Text;
+        }
+
+        private void btnResolucion_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new FrmResoluciones(IdEstacionamiento));
+
+            lblTitulo.Text = btnResolucion.Text;
+        }
+
+        private void btnPuntoDePago_Click(object sender, EventArgs e)
+        {
+            showSubMenu(PanelSubMenu3);
         }
     }
 }

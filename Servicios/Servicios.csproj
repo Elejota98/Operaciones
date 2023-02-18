@@ -31,6 +31,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EGlobalT.Device.SmartCard">
+      <HintPath>..\Operaciones\bin\Debug\EGlobalT.Device.SmartCard.dll</HintPath>
+    </Reference>
+    <Reference Include="EGlobalT.Device.SmartCardDispensers">
+      <HintPath>..\Operaciones\bin\Debug\EGlobalT.Device.SmartCardDispensers.dll</HintPath>
+    </Reference>
+    <Reference Include="EGlobalT.Device.SmartCardFeeders">
+      <HintPath>..\Operaciones\bin\Debug\EGlobalT.Device.SmartCardFeeders.dll</HintPath>
+    </Reference>
+    <Reference Include="EGlobalT.Device.SmartCardReaders">
+      <HintPath>..\Operaciones\bin\Debug\EGlobalT.Device.SmartCardReaders.dll</HintPath>
+    </Reference>
+    <Reference Include="EGlobalT.Device.Tools">
+      <HintPath>..\Operaciones\bin\Debug\EGlobalT.Device.Tools.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -45,8 +60,13 @@
     <Compile Include="Conexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositorioAutorizados.cs" />
+    <Compile Include="RepositorioEstacionamiento.cs" />
+    <Compile Include="RepositorioFacturacion.cs" />
     <Compile Include="RepositorioLogin.cs" />
+    <Compile Include="RepositorioParametros.cs" />
+    <Compile Include="RepositorioResoluciones.cs" />
     <Compile Include="RepositorioTarjetas.cs" />
+    <Compile Include="ServiciosTarjetas.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Modelo\Modelo.csproj">

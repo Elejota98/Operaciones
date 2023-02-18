@@ -41,7 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EstacionamientoController.cs" />
+    <Compile Include="FacturacionController.cs" />
     <Compile Include="LoginController.cs" />
+    <Compile Include="ParametrosController.cs" />
     <Compile Include="PesonasAutorizadasController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TarjetasController.cs" />

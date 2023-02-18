@@ -40,7 +40,6 @@ namespace Servicios
                 if (sqlCon.State == ConnectionState.Open) sqlCon.Close();
             }
         }
-
         public DataTable ListarAutorizaciones()
         {
             DataTable tabla = new DataTable();

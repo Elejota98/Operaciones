@@ -35,18 +35,22 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.PanelMenu = new System.Windows.Forms.Panel();
-            this.btnPuntoDePago = new FontAwesome.Sharp.IconButton();
+            this.PanelSubMenu3 = new System.Windows.Forms.Panel();
+            this.btnResolucion = new FontAwesome.Sharp.IconButton();
+            this.btnAnularFac = new FontAwesome.Sharp.IconButton();
+            this.btnFacturacion = new FontAwesome.Sharp.IconButton();
             this.PanelSubMenu2 = new System.Windows.Forms.Panel();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.PanelSubMenu1 = new System.Windows.Forms.Panel();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.btnReposicionSinCobro = new FontAwesome.Sharp.IconButton();
             this.BtnPersonasAutorizadas = new FontAwesome.Sharp.IconButton();
             this.btnAutorizados = new FontAwesome.Sharp.IconButton();
             this.PanelFormulario = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.PanelMenu.SuspendLayout();
+            this.PanelSubMenu3.SuspendLayout();
             this.PanelSubMenu2.SuspendLayout();
             this.PanelSubMenu1.SuspendLayout();
             this.SuspendLayout();
@@ -111,7 +115,8 @@
             // PanelMenu
             // 
             this.PanelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(180)))), ((int)(((byte)(77)))));
-            this.PanelMenu.Controls.Add(this.btnPuntoDePago);
+            this.PanelMenu.Controls.Add(this.PanelSubMenu3);
+            this.PanelMenu.Controls.Add(this.btnFacturacion);
             this.PanelMenu.Controls.Add(this.PanelSubMenu2);
             this.PanelMenu.Controls.Add(this.iconButton1);
             this.PanelMenu.Controls.Add(this.PanelSubMenu1);
@@ -122,24 +127,77 @@
             this.PanelMenu.Size = new System.Drawing.Size(200, 585);
             this.PanelMenu.TabIndex = 1;
             // 
-            // btnPuntoDePago
+            // PanelSubMenu3
             // 
-            this.btnPuntoDePago.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPuntoDePago.FlatAppearance.BorderSize = 0;
-            this.btnPuntoDePago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPuntoDePago.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F);
-            this.btnPuntoDePago.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnPuntoDePago.Icon = FontAwesome.Sharp.IconChar.ChevronDown;
-            this.btnPuntoDePago.IconColor = System.Drawing.Color.White;
-            this.btnPuntoDePago.IconSize = 16;
-            this.btnPuntoDePago.Image = ((System.Drawing.Image)(resources.GetObject("btnPuntoDePago.Image")));
-            this.btnPuntoDePago.Location = new System.Drawing.Point(0, 329);
-            this.btnPuntoDePago.Name = "btnPuntoDePago";
-            this.btnPuntoDePago.Size = new System.Drawing.Size(200, 53);
-            this.btnPuntoDePago.TabIndex = 4;
-            this.btnPuntoDePago.Text = "Reportes";
-            this.btnPuntoDePago.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnPuntoDePago.UseVisualStyleBackColor = true;
+            this.PanelSubMenu3.Controls.Add(this.btnResolucion);
+            this.PanelSubMenu3.Controls.Add(this.btnAnularFac);
+            this.PanelSubMenu3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelSubMenu3.Location = new System.Drawing.Point(0, 382);
+            this.PanelSubMenu3.Name = "PanelSubMenu3";
+            this.PanelSubMenu3.Size = new System.Drawing.Size(200, 100);
+            this.PanelSubMenu3.TabIndex = 5;
+            // 
+            // btnResolucion
+            // 
+            this.btnResolucion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(88)))), ((int)(((byte)(88)))));
+            this.btnResolucion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnResolucion.FlatAppearance.BorderSize = 0;
+            this.btnResolucion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResolucion.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F);
+            this.btnResolucion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(180)))), ((int)(((byte)(77)))));
+            this.btnResolucion.Icon = FontAwesome.Sharp.IconChar.Language;
+            this.btnResolucion.IconColor = System.Drawing.Color.White;
+            this.btnResolucion.IconSize = 16;
+            this.btnResolucion.Image = ((System.Drawing.Image)(resources.GetObject("btnResolucion.Image")));
+            this.btnResolucion.Location = new System.Drawing.Point(0, 41);
+            this.btnResolucion.Name = "btnResolucion";
+            this.btnResolucion.Size = new System.Drawing.Size(200, 41);
+            this.btnResolucion.TabIndex = 4;
+            this.btnResolucion.Text = "Resoluciones";
+            this.btnResolucion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnResolucion.UseVisualStyleBackColor = false;
+            this.btnResolucion.Click += new System.EventHandler(this.btnResolucion_Click);
+            // 
+            // btnAnularFac
+            // 
+            this.btnAnularFac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(88)))), ((int)(((byte)(88)))));
+            this.btnAnularFac.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAnularFac.FlatAppearance.BorderSize = 0;
+            this.btnAnularFac.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnularFac.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F);
+            this.btnAnularFac.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(180)))), ((int)(((byte)(77)))));
+            this.btnAnularFac.Icon = FontAwesome.Sharp.IconChar.Sliders;
+            this.btnAnularFac.IconColor = System.Drawing.Color.White;
+            this.btnAnularFac.IconSize = 16;
+            this.btnAnularFac.Image = ((System.Drawing.Image)(resources.GetObject("btnAnularFac.Image")));
+            this.btnAnularFac.Location = new System.Drawing.Point(0, 0);
+            this.btnAnularFac.Name = "btnAnularFac";
+            this.btnAnularFac.Size = new System.Drawing.Size(200, 41);
+            this.btnAnularFac.TabIndex = 3;
+            this.btnAnularFac.Text = "Anulaciones";
+            this.btnAnularFac.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAnularFac.UseVisualStyleBackColor = false;
+            this.btnAnularFac.Click += new System.EventHandler(this.iconButton3_Click_1);
+            // 
+            // btnFacturacion
+            // 
+            this.btnFacturacion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnFacturacion.FlatAppearance.BorderSize = 0;
+            this.btnFacturacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFacturacion.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F);
+            this.btnFacturacion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnFacturacion.Icon = FontAwesome.Sharp.IconChar.ChevronDown;
+            this.btnFacturacion.IconColor = System.Drawing.Color.White;
+            this.btnFacturacion.IconSize = 16;
+            this.btnFacturacion.Image = ((System.Drawing.Image)(resources.GetObject("btnFacturacion.Image")));
+            this.btnFacturacion.Location = new System.Drawing.Point(0, 329);
+            this.btnFacturacion.Name = "btnFacturacion";
+            this.btnFacturacion.Size = new System.Drawing.Size(200, 53);
+            this.btnFacturacion.TabIndex = 4;
+            this.btnFacturacion.Text = "Facturación";
+            this.btnFacturacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFacturacion.UseVisualStyleBackColor = true;
+            this.btnFacturacion.Click += new System.EventHandler(this.btnPuntoDePago_Click);
             // 
             // PanelSubMenu2
             // 
@@ -164,7 +222,7 @@
             this.iconButton2.Image = ((System.Drawing.Image)(resources.GetObject("iconButton2.Image")));
             this.iconButton2.Location = new System.Drawing.Point(0, 0);
             this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(200, 59);
+            this.iconButton2.Size = new System.Drawing.Size(200, 41);
             this.iconButton2.TabIndex = 3;
             this.iconButton2.Text = "Saldo En Linea";
             this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -194,7 +252,7 @@
             // PanelSubMenu1
             // 
             this.PanelSubMenu1.Controls.Add(this.iconButton4);
-            this.PanelSubMenu1.Controls.Add(this.iconButton3);
+            this.PanelSubMenu1.Controls.Add(this.btnReposicionSinCobro);
             this.PanelSubMenu1.Controls.Add(this.BtnPersonasAutorizadas);
             this.PanelSubMenu1.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelSubMenu1.Location = new System.Drawing.Point(0, 47);
@@ -222,25 +280,26 @@
             this.iconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton4.UseVisualStyleBackColor = false;
             // 
-            // iconButton3
+            // btnReposicionSinCobro
             // 
-            this.iconButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(88)))), ((int)(((byte)(88)))));
-            this.iconButton3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton3.FlatAppearance.BorderSize = 0;
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F);
-            this.iconButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(180)))), ((int)(((byte)(77)))));
-            this.iconButton3.Icon = FontAwesome.Sharp.IconChar.PencilSquareO;
-            this.iconButton3.IconColor = System.Drawing.Color.White;
-            this.iconButton3.IconSize = 16;
-            this.iconButton3.Image = ((System.Drawing.Image)(resources.GetObject("iconButton3.Image")));
-            this.iconButton3.Location = new System.Drawing.Point(0, 40);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(200, 41);
-            this.iconButton3.TabIndex = 3;
-            this.iconButton3.Text = "Reposición Sin Cobro";
-            this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton3.UseVisualStyleBackColor = false;
+            this.btnReposicionSinCobro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(88)))), ((int)(((byte)(88)))));
+            this.btnReposicionSinCobro.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReposicionSinCobro.FlatAppearance.BorderSize = 0;
+            this.btnReposicionSinCobro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReposicionSinCobro.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F);
+            this.btnReposicionSinCobro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(180)))), ((int)(((byte)(77)))));
+            this.btnReposicionSinCobro.Icon = FontAwesome.Sharp.IconChar.PencilSquareO;
+            this.btnReposicionSinCobro.IconColor = System.Drawing.Color.White;
+            this.btnReposicionSinCobro.IconSize = 16;
+            this.btnReposicionSinCobro.Image = ((System.Drawing.Image)(resources.GetObject("btnReposicionSinCobro.Image")));
+            this.btnReposicionSinCobro.Location = new System.Drawing.Point(0, 40);
+            this.btnReposicionSinCobro.Name = "btnReposicionSinCobro";
+            this.btnReposicionSinCobro.Size = new System.Drawing.Size(200, 41);
+            this.btnReposicionSinCobro.TabIndex = 3;
+            this.btnReposicionSinCobro.Text = "Reposición Sin Cobro";
+            this.btnReposicionSinCobro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReposicionSinCobro.UseVisualStyleBackColor = false;
+            this.btnReposicionSinCobro.Click += new System.EventHandler(this.iconButton3_Click);
             // 
             // BtnPersonasAutorizadas
             // 
@@ -307,6 +366,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.PanelMenu.ResumeLayout(false);
+            this.PanelSubMenu3.ResumeLayout(false);
             this.PanelSubMenu2.ResumeLayout(false);
             this.PanelSubMenu1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -328,8 +388,11 @@
         private System.Windows.Forms.Panel PanelSubMenu2;
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton iconButton3;
+        private FontAwesome.Sharp.IconButton btnReposicionSinCobro;
         private FontAwesome.Sharp.IconButton iconButton4;
-        private FontAwesome.Sharp.IconButton btnPuntoDePago;
+        private FontAwesome.Sharp.IconButton btnFacturacion;
+        private System.Windows.Forms.Panel PanelSubMenu3;
+        private FontAwesome.Sharp.IconButton btnAnularFac;
+        private FontAwesome.Sharp.IconButton btnResolucion;
     }
 }
