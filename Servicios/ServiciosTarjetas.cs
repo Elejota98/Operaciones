@@ -103,7 +103,7 @@ namespace Servicios
                                 SMARTCARD_PARKING_V1 oTarjeta = new SMARTCARD_PARKING_V1();
                                 oTarjeta.TypeCard = TYPE_TARJETAPARKING_V1.AUTHORIZED_PARKING;
                                 oTarjeta.CodeCard = resp.CodigoTarjeta;
-                                oTarjeta.ActiveCycle = false;
+                                oTarjeta.ActiveCycle = true;
                                 oTarjeta.Replacement = false;
                                 //oTarjeta.CodeAgreement1 = Convert.ToInt32(idAutho);
 

@@ -48,7 +48,16 @@ namespace Controlador
             }
             else
             {
-                serviciosTarjetas.CreateAuthCardRepo(password);
+                if (!oCardResponse.error)
+                {
+                     oCardResponse= serviciosTarjetas.CreateAuthCardRepo(password);
+                    if (oCardResponse.error)
+                    {
+                        oCardResponse.error = true;
+                    }
+                    
+                }
+                
 
             }
             return oCardResponse;

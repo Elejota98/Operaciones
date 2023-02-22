@@ -95,14 +95,14 @@ namespace Operaciones
             chkEstado.Enabled = true;
 
         }
-        private void MensajeError(string Mensaje)
-        {
-            MessageBox.Show(Mensaje, "Parquearse Tecnología", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-        private void MensajeOk(string Mensaje)
-        {
-            MessageBox.Show(Mensaje, "Parquearse Tecnología", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
+            private void MensajeError(string Mensaje)
+            {
+                MessageBox.Show(Mensaje, "Parquearse Tecnología", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            private void MensajeOk(string Mensaje)
+            {
+                MessageBox.Show(Mensaje, "Parquearse Tecnología", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         public void ListarAutorizados()
         {
 

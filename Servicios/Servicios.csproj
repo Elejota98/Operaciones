@@ -62,6 +62,7 @@
     <Compile Include="RepositorioAutorizados.cs" />
     <Compile Include="RepositorioEstacionamiento.cs" />
     <Compile Include="RepositorioFacturacion.cs" />
+    <Compile Include="RepositorioFacturasManuales.cs" />
     <Compile Include="RepositorioLogin.cs" />
     <Compile Include="RepositorioParametros.cs" />
     <Compile Include="RepositorioResoluciones.cs" />

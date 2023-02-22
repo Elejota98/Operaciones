@@ -35,5 +35,30 @@ namespace Servicios
                 if(sqlCon.State==ConnectionState.Open) sqlCon.Close();
             }
         }
+
+        public DataTable ListarEstacionamientos()
+        {
+            DataTable tabla = new DataTable();
+            SqlConnection sqlCon = new SqlConnection();
+            try
+            {
+                sqlCon = Conexion.getInstancia().CrearConexion();
+                string cadena = ("Select IdEstacionamiento, Nombre From T_Estacionamientos");
+                SqlCommand comando = new SqlCommand(cadena, sqlCon);
+                sqlCon.Open();
+                SqlDataReader rta = comando.ExecuteReader();
+                tabla.Load(rta);
+                return tabla;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                if (sqlCon.State == ConnectionState.Open) sqlCon.Close();
+            }
+        }
     }
 }

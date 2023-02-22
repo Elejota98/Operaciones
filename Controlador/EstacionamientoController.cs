@@ -16,5 +16,11 @@ namespace Controlador
             RepositorioEstacionamiento Datos = new RepositorioEstacionamiento();
             return Datos.ListarEstacionamiento(estacionamiento);
         }
+        public static DataTable ListarEstacionamientos()
+        {
+            RepositorioEstacionamiento Datos = new RepositorioEstacionamiento();
+            return Datos.ListarEstacionamientos();
+        }
+
     }
 }

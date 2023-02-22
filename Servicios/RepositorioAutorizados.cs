@@ -155,6 +155,31 @@ namespace Servicios
             return rta;
         }
 
+        public string ActualizaTarjetaAutorizado(PersonasAutorizadas personasAutorizadas)
+        {
+            string rta = "";
+            SqlConnection sqlCon = new SqlConnection();
+            try
+            {
+                sqlCon = Conexion.getInstancia().CrearConexion();
+                string cadena = ("UPDATE T_PersonasAutorizadas set IdTarjeta='" + personasAutorizadas.IdTarjeta + "' where Documento='" + personasAutorizadas.Documento + "' and IdEstacionamiento=" + personasAutorizadas.IdEstacionamiento + "");
+                SqlCommand comando = new  SqlCommand(cadena,sqlCon);
+                sqlCon.Open();
+                comando.ExecuteNonQuery();
+                rta = "OK";
+                return rta;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex ;
+            }
+            finally
+            {
+                if (sqlCon.State == ConnectionState.Open) sqlCon.Close();
+            }
+        }
+
 
     }
 }

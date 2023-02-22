@@ -44,6 +44,7 @@
     <Compile Include="AutorizacionesViewModel.cs" />
     <Compile Include="CardResponse.cs" />
     <Compile Include="Estacionamiento.cs" />
+    <Compile Include="FacturasManuales.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="Pagos.cs" />
     <Compile Include="Parametros.cs" />

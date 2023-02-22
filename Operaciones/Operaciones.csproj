@@ -116,6 +116,12 @@
     <Compile Include="Autorizados\FrmAutorizado.Designer.cs">
       <DependentUpon>FrmAutorizado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Facturacion\FrmFacturasManuales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Facturacion\FrmFacturasManuales.Designer.cs">
+      <DependentUpon>FrmFacturasManuales.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Autorizados\FrmAutorizado.resx">
       <DependentUpon>FrmAutorizado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Facturacion\FrmFacturasManuales.resx">
+      <DependentUpon>FrmFacturasManuales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>

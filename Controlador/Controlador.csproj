@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="EstacionamientoController.cs" />
     <Compile Include="FacturacionController.cs" />
+    <Compile Include="FacturasManualesController.cs" />
     <Compile Include="LoginController.cs" />
     <Compile Include="ParametrosController.cs" />
     <Compile Include="PesonasAutorizadasController.cs" />

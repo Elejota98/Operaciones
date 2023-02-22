@@ -36,6 +36,7 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.PanelMenu = new System.Windows.Forms.Panel();
             this.PanelSubMenu3 = new System.Windows.Forms.Panel();
+            this.btnFacManuales = new FontAwesome.Sharp.IconButton();
             this.btnResolucion = new FontAwesome.Sharp.IconButton();
             this.btnAnularFac = new FontAwesome.Sharp.IconButton();
             this.btnFacturacion = new FontAwesome.Sharp.IconButton();
@@ -106,7 +107,7 @@
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 26.25F);
             this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(180)))), ((int)(((byte)(77)))));
-            this.lblTitulo.Location = new System.Drawing.Point(545, 29);
+            this.lblTitulo.Location = new System.Drawing.Point(462, 17);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(109, 40);
             this.lblTitulo.TabIndex = 0;
@@ -129,13 +130,35 @@
             // 
             // PanelSubMenu3
             // 
+            this.PanelSubMenu3.Controls.Add(this.btnFacManuales);
             this.PanelSubMenu3.Controls.Add(this.btnResolucion);
             this.PanelSubMenu3.Controls.Add(this.btnAnularFac);
             this.PanelSubMenu3.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelSubMenu3.Location = new System.Drawing.Point(0, 382);
             this.PanelSubMenu3.Name = "PanelSubMenu3";
-            this.PanelSubMenu3.Size = new System.Drawing.Size(200, 100);
+            this.PanelSubMenu3.Size = new System.Drawing.Size(200, 130);
             this.PanelSubMenu3.TabIndex = 5;
+            // 
+            // btnFacManuales
+            // 
+            this.btnFacManuales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(88)))), ((int)(((byte)(88)))));
+            this.btnFacManuales.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnFacManuales.FlatAppearance.BorderSize = 0;
+            this.btnFacManuales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFacManuales.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F);
+            this.btnFacManuales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(180)))), ((int)(((byte)(77)))));
+            this.btnFacManuales.Icon = FontAwesome.Sharp.IconChar.PencilSquareO;
+            this.btnFacManuales.IconColor = System.Drawing.Color.White;
+            this.btnFacManuales.IconSize = 16;
+            this.btnFacManuales.Image = ((System.Drawing.Image)(resources.GetObject("btnFacManuales.Image")));
+            this.btnFacManuales.Location = new System.Drawing.Point(0, 82);
+            this.btnFacManuales.Name = "btnFacManuales";
+            this.btnFacManuales.Size = new System.Drawing.Size(200, 41);
+            this.btnFacManuales.TabIndex = 5;
+            this.btnFacManuales.Text = "Facturas Manuales";
+            this.btnFacManuales.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFacManuales.UseVisualStyleBackColor = false;
+            this.btnFacManuales.Click += new System.EventHandler(this.iconButton3_Click_2);
             // 
             // btnResolucion
             // 
@@ -394,5 +417,6 @@
         private System.Windows.Forms.Panel PanelSubMenu3;
         private FontAwesome.Sharp.IconButton btnAnularFac;
         private FontAwesome.Sharp.IconButton btnResolucion;
+        private FontAwesome.Sharp.IconButton btnFacManuales;
     }
 }

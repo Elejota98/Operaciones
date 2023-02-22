@@ -1,4 +1,5 @@
 ﻿using Modelo;
+using Operaciones.Facturacion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -147,6 +148,13 @@ namespace Operaciones
         private void btnPuntoDePago_Click(object sender, EventArgs e)
         {
             showSubMenu(PanelSubMenu3);
+        }
+
+        private void iconButton3_Click_2(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new FrmFacturasManuales(Documento, Cargo, IdEstacionamiento));
+
+            lblTitulo.Text = btnFacManuales.Text;
         }
     }
 }

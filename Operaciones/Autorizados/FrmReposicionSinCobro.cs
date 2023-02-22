@@ -459,9 +459,18 @@ namespace Operaciones
 
         private void btnTarjeta_Click(object sender, EventArgs e)
         {
+
             if (ObtenerValorParametrosPorNombre())
             {
-                TarjetasController.CrearTarjetaAutorizadoSinReposicion(parametros.Codigo);
+               cardResponse= TarjetasController.CrearTarjetaAutorizadoSinReposicion(parametros.Codigo);
+                if (cardResponse.error == false)
+                {
+                    MensajeOk("Ok");
+                }
+                else
+                {
+                    MensajeError(cardResponse.errorMessage.ToString());
+                }
             }
         }
     }

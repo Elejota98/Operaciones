@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
@@ -71,6 +72,20 @@ namespace Controlador
             else
             {
                 return Datos.ActualizarAutoizado(personasAutorizadas);
+            }
+        }
+        public static string ActualizaTarjetaAutorizado(PersonasAutorizadas personasAutorizadas)
+        {
+            RepositorioAutorizados Datos = new RepositorioAutorizados();
+            if(personasAutorizadas.IdTarjeta == string.Empty)
+            {
+                return "No se encontró el Id de la tarjeta";
+
+            }
+            else
+            {
+                return Datos.ActualizaTarjetaAutorizado(personasAutorizadas);
+
             }
         }
     }
