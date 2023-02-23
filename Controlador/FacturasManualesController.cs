@@ -22,10 +22,26 @@ namespace Controlador
             RepositorioFacturasManuales Datos = new RepositorioFacturasManuales();
             return Datos.ListarCarril();
         }
+        public static DataTable ListarUsuarios()
+        {
+            RepositorioFacturasManuales Datos = new RepositorioFacturasManuales();
+            return Datos.ListarUusarios();
+        }
+        public static DataTable ListarUsuariosPorDocumento(FacturasManuales facturasManuales)
+        {
+            RepositorioFacturasManuales Datos = new RepositorioFacturasManuales();
+            return Datos.ListarUusariosPorDocumento( facturasManuales);
+        }
         public static DataTable ListarTipoCobro()
         {
             RepositorioFacturasManuales Datos = new RepositorioFacturasManuales();
             return Datos.ListarTipoCobro();
+        }
+
+        public static DataTable ListarTipoCobroNombre( FacturasManuales facturasManuales)
+        {
+            RepositorioFacturasManuales Datos = new RepositorioFacturasManuales();
+            return Datos.ListarTipoCobroPorNombre(facturasManuales);
         }
         public static string InsertarFactura(FacturasManuales facturasManuales)
         {

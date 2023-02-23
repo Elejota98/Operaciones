@@ -125,6 +125,7 @@
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // iconButton3
             // 
@@ -144,6 +145,7 @@
             this.iconButton3.Text = "Cancelar";
             this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton3.UseVisualStyleBackColor = false;
+            this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
             // 
             // btnGuardar
             // 
@@ -163,6 +165,7 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnNuevo
             // 
@@ -182,6 +185,7 @@
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // TxtFechaPago
             // 
@@ -203,6 +207,7 @@
             this.CboUsuario.Name = "CboUsuario";
             this.CboUsuario.Size = new System.Drawing.Size(208, 26);
             this.CboUsuario.TabIndex = 34;
+            this.CboUsuario.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CboUsuario_MouseClick);
             // 
             // label12
             // 
@@ -224,6 +229,7 @@
             this.CboTipoCobro.Name = "CboTipoCobro";
             this.CboTipoCobro.Size = new System.Drawing.Size(208, 26);
             this.CboTipoCobro.TabIndex = 32;
+            this.CboTipoCobro.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CboTipoCobro_MouseClick);
             // 
             // label13
             // 
@@ -254,6 +260,7 @@
             this.CboEstacionamiento.Name = "CboEstacionamiento";
             this.CboEstacionamiento.Size = new System.Drawing.Size(208, 26);
             this.CboEstacionamiento.TabIndex = 4;
+            this.CboEstacionamiento.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CboEstacionamiento_MouseClick);
             // 
             // label14
             // 
@@ -309,7 +316,7 @@
             this.cboCarril.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
             this.cboCarril.FormattingEnabled = true;
             this.cboCarril.Items.AddRange(new object[] {
-            "PPPM01"});
+            "PPM01"});
             this.cboCarril.Location = new System.Drawing.Point(522, 18);
             this.cboCarril.Name = "cboCarril";
             this.cboCarril.Size = new System.Drawing.Size(208, 26);

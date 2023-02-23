@@ -8,6 +8,7 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using Modelo;
+using System.Data.Common;
 
 namespace Servicios
 {
@@ -68,6 +69,59 @@ namespace Servicios
             }
 
         }
+        public DataTable ListarUusarios()
+        {
+            DataTable tabla = new DataTable();
+            SqlConnection sqlcon = new SqlConnection();
+            try
+            {
+                sqlcon = Conexion.getInstancia().CrearConexion();
+                string cadena = ("select Documento, Nombres, Apellidos from T_Usuarios");
+                SqlCommand comando = new SqlCommand(cadena, sqlcon);
+                sqlcon.Open();
+                SqlDataReader rta = comando.ExecuteReader();
+                tabla.Load(rta);
+                return tabla;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                if (sqlcon.State == ConnectionState.Open) sqlcon.Close();
+            }
+
+        }
+        public DataTable ListarUusariosPorDocumento(FacturasManuales facturasManuales)
+        {
+            DataTable tabla = new DataTable();
+            SqlConnection sqlcon = new SqlConnection();
+            try
+            {
+                sqlcon = Conexion.getInstancia().CrearConexion();
+                string cadena = ("select Documento, Nombres from T_Usuarios where Documento='"+facturasManuales.DocumentoUsuario+"'");
+                SqlCommand comando = new SqlCommand(cadena, sqlcon);
+                sqlcon.Open();
+                SqlDataReader rta = comando.ExecuteReader();
+                tabla.Load(rta);
+                return tabla;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                if (sqlcon.State == ConnectionState.Open) sqlcon.Close();
+            }
+
+        }
+
         public DataTable ListarTipoCobro()
         {
 
@@ -76,7 +130,33 @@ namespace Servicios
             try
             {
                 sqlcon = Conexion.getInstancia().CrearConexion();
-                string cadena = "select * from t_tipovehiculo";
+                string cadena = "select IdTipoVehiculo,TipoVehiculo from t_tipovehiculo";
+                SqlCommand comando = new SqlCommand(cadena, sqlcon);
+                sqlcon.Open();
+                SqlDataReader rta = comando.ExecuteReader();
+                Tabla.Load(rta);
+                return Tabla;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                if (sqlcon.State == ConnectionState.Open) sqlcon.Close();
+            }
+
+        }
+        public DataTable ListarTipoCobroPorNombre(FacturasManuales facturasManuales)
+        {
+
+            DataTable Tabla = new DataTable();
+            SqlConnection sqlcon = new SqlConnection();
+            try
+            {
+                sqlcon = Conexion.getInstancia().CrearConexion();
+                string cadena = "SELECT * FROM T_TipoVehiculo WHERE TipoVehiculo='"+facturasManuales.TipoVehiculo+"'";
                 SqlCommand comando = new SqlCommand(cadena, sqlcon);
                 sqlcon.Open();
                 SqlDataReader rta = comando.ExecuteReader();
@@ -99,11 +179,18 @@ namespace Servicios
             string Rta = "";
             DataTable tabla = new DataTable();
             SqlConnection sqlcon = new SqlConnection();
+            string fechaPago = string.Empty;
+            string fechaPagoAntes = string.Empty;
+            fechaPago = facturasManuales.FechaPago.Year + "-" + facturasManuales.FechaPago.Month + "-" + facturasManuales.FechaPago.Day + " " + facturasManuales.FechaPago.Hour + ":" +
+                facturasManuales.FechaPago.Minute + ":" + facturasManuales.FechaPago.Second;
+
+           fechaPagoAntes= facturasManuales.FechaPago.Year + "-" + facturasManuales.FechaPago.Month + "-" + facturasManuales.FechaPago.Day + " " + facturasManuales.FechaPago.Hour + ":" +
+                facturasManuales.FechaPago.Minute + ":" + facturasManuales.FechaPago.Second;
             try
             {
                 sqlcon = Conexion.getInstancia().CrearConexion();
                 string cadena = ("insert into T_FacturasManuales(IdModulo,IdEstacionamiento,FechaPago,Subtotal,Iva,Total,Prefijo,NumeroFactura,IdTipovehiculo,DocumentoUsuario,Sincronizacion) " +
-                "Values('" + facturasManuales.IdModulo + "','" + facturasManuales.IdEstacionamiento + "', '" + facturasManuales.FechaPago + "', '" + facturasManuales.Subtotal + "', " +
+                "Values('" + facturasManuales.IdModulo + "','" + facturasManuales.IdEstacionamiento + "', '" + fechaPago+ "', '" + facturasManuales.Subtotal + "', " +
                 "'" + facturasManuales.Iva + "', '" + facturasManuales.Total + "', '" + facturasManuales.Prefijo + "', '" + facturasManuales.NumeroFactura + "', '" + facturasManuales.IdTipoVehiculo + 
                 "', '" + facturasManuales.DocumentoUsuario + "', '" + 1 + "')");
                 SqlCommand comando = new SqlCommand(cadena, sqlcon);
@@ -128,14 +215,21 @@ namespace Servicios
             string Rta = "";
             DataTable tabla = new DataTable();
             SqlConnection sqlcon = new SqlConnection();
+            string fechaPago = string.Empty;
+            string fechaPagoAntes = string.Empty;
+            fechaPago = facturasManuales.FechaPago.Year + "-" + facturasManuales.FechaPago.Month + "-" + facturasManuales.FechaPago.Day + " " + facturasManuales.FechaPago.Hour + ":" +
+                facturasManuales.FechaPago.Minute + ":" + facturasManuales.FechaPago.Second;
+
+            fechaPagoAntes = facturasManuales.FechaPago.Year + "-" + facturasManuales.FechaPago.Month + "-" + facturasManuales.FechaPago.Day + " " + facturasManuales.FechaPago.Hour + ":" +
+                 facturasManuales.FechaPago.Minute + ":" + facturasManuales.FechaPago.Second;
             try
             {
                 sqlcon = Conexion.getInstancia().CrearConexion();
-                string cadena = ("update T_FacturasManuales set FechaPago='" + facturasManuales.FechaPago + "', Subtotal='" + facturasManuales.Subtotal + "', Iva='" + facturasManuales.Iva + 
-                    "', Total='" + facturasManuales.Total + "', Prefijo='" + facturasManuales.Prefijo + "', NumeroFactura='" + facturasManuales.NumeroFactura + "', ." +
-                    "IdTipoVehiculo='" + facturasManuales.IdTipoVehiculo + "',DocumentoUsuario='" + facturasManuales.DocumentoUsuario + "', Sincronizacion=1 where Prefijo='" + facturasManuales.PrefijoAntes + "'" +
-                    " and IdEstacionamiento='" + facturasManuales.IdEstacionamientoAntes + "' and NumeroFactura='" + facturasManuales.NumeroFacturaAntes + "' and IdModulo='"+ facturasManuales.IdModuloAntes+ "' and IdTipoVehiculo='"+ facturasManuales.IdTipoVehiculoAntes+ "'" +
-                    "And DocumentoUsuario='"+ facturasManuales.DocumentoUsuarioAntes+ "'");
+                string cadena = ("UPDATE T_FacturasManuales SET IdModulo='"+facturasManuales.IdModulo+"', FechaPago='"+ fechaPago+ "', Subtotal='"+ facturasManuales.Subtotal+ "', " +
+                    "IVA ='"+ facturasManuales.Iva+ "', Total='"+ facturasManuales.Total+ "', Prefijo='"+ facturasManuales.Prefijo+ "', NumeroFactura='"+ facturasManuales.NumeroFactura+ "', IdTipoVehiculo='"+ facturasManuales.IdTipoVehiculo+ "', " +
+                    "DocumentoUsuario='"+facturasManuales.DocumentoUsuario+"', Sincronizacion=1 WHERE IdModulo='" + facturasManuales.IdModuloAntes + "' AND IdEstacionamiento='"+facturasManuales.IdEstacionamientoAntes+ "' AND FechaPago='"+ fechaPagoAntes+ "'"+
+                    "AND Total='"+facturasManuales.TotalAntes+"' AND Prefijo='"+facturasManuales.PrefijoAntes+"' " +
+                    "AND NumeroFactura='"+facturasManuales.NumeroFacturaAntes +"' AND DocumentoUsuario='"+facturasManuales.DocumentoUsuarioAntes+"' ");
                 SqlCommand comando = new SqlCommand(cadena, sqlcon);
                 sqlcon.Open();
                 comando.ExecuteNonQuery();
@@ -152,5 +246,6 @@ namespace Servicios
             }
             return Rta;
         }
+
     }
 }

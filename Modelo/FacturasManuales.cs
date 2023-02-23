@@ -11,9 +11,9 @@ namespace Modelo
         public string IdModulo { get; set; }
         public long IdEstacionamiento { get; set; }
         public DateTime FechaPago { get; set; }
-        public int Subtotal { get; set; }
-        public int Total { get; set; }
-        public int Iva { get; set; }
+        public double Subtotal { get; set; }
+        public double Total { get; set; }
+        public double Iva { get; set; }
         public string Prefijo { get; set; }
         public string NumeroFactura { get; set; }
         public int IdTipoVehiculo { get; set; }
@@ -30,5 +30,6 @@ namespace Modelo
         public string IdTipoVehiculoAntes { get; set; }
         public string DocumentoUsuarioAntes { get; set; }
         public bool SincronizacionAntes { get; set; }
+        public string TipoVehiculo { get; set; }
     }
 }

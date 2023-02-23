@@ -17,6 +17,7 @@ namespace Operaciones.Facturacion
         public string Cargo;
         public string Documento;
         public long IdEstacionamiento;
+        FacturasManuales facturasManuales = new FacturasManuales();
         public FrmFacturasManuales(string documento, string cargo, long idEstacionamiento)
         {
             InitializeComponent();
@@ -59,6 +60,51 @@ namespace Operaciones.Facturacion
                 throw ex;
             }
         }
+
+        public void ListarSede()
+        {
+            try
+            {
+                CboEstacionamiento.DataSource = EstacionamientoController.ListarEstacionamientos();
+                CboEstacionamiento.ValueMember = "IdEstacionamiento";
+                CboEstacionamiento.DisplayMember = "Nombre";
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public void ListarTipoCobro()
+        {
+            try
+            {
+                CboTipoCobro.DataSource = FacturasManualesController.ListarTipoCobro();
+                CboTipoCobro.ValueMember = "IdTipoVehiculo";
+                CboTipoCobro.DisplayMember = "TipoVehiculo";
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public void ListarUsuarios()
+        {
+            try
+            {
+                CboUsuario.DataSource = FacturasManualesController.ListarUsuarios();
+                CboUsuario.ValueMember = "Documento";
+                CboUsuario.DisplayMember = "Nombres";
+                
+                
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
         public void Bloquear()
         {
             CboEstacionamiento.Enabled= false;
@@ -86,6 +132,22 @@ namespace Operaciones.Facturacion
             btnActualizar.Visible = true;
             btnGuardar.Enabled = true;
         }
+
+        public void Limpiar()
+        {
+            CboEstacionamiento.DataSource= null;
+            CboUsuario.DataSource =null;
+            TxtFechaPago.Text = Convert.ToString(DateTime.Now);
+            CboTipoCobro.DataSource = null;
+            txtNumeroFactura.Text = string.Empty;
+            cboCarril.Text= string.Empty;
+            txtPrefijo.Text = string.Empty;
+            txtTotal.Text = string.Empty;
+            DgvListado.Columns.Clear();
+
+
+        }
+
         public void ListarFacturasManuales()
         {
             //int total = Convert.ToInt32(txtTotal.Text.ToString());
@@ -121,6 +183,11 @@ namespace Operaciones.Facturacion
         {
             MessageBox.Show(Mensaje, "Parquearse Tecnología", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        public void ActuaizarFacturasManuales()
+        {
+
+        }
         #endregion
 
         private void FrmFacturasManuales_Load(object sender, EventArgs e)
@@ -136,7 +203,6 @@ namespace Operaciones.Facturacion
 
         private void DgvListado_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            FacturasManuales facturasManuales = new FacturasManuales();
             try { 
                 if (e.ColumnIndex == DgvListado.Columns["Editar"].Index)
             {
@@ -154,15 +220,38 @@ namespace Operaciones.Facturacion
                         facturasManuales.NumeroFacturaAntes = Convert.ToString(DgvListado.CurrentRow.Cells["NumeroFactura"].Value);
                         facturasManuales.IdTipoVehiculoAntes = Convert.ToString(DgvListado.CurrentRow.Cells["TipoVehiculo"].Value);
                         facturasManuales.DocumentoUsuarioAntes = Convert.ToString(DgvListado.CurrentRow.Cells["Documento"].Value);
+                        cboCarril.SelectedText = string.Empty;
+                        cboCarril.SelectedText = Convert.ToString(DgvListado.CurrentRow.Cells["IdModulo"].Value);
+                       Int64 IdEstacionamientoTabla = Convert.ToInt64(DgvListado.CurrentRow.Cells["IdEstacionamiento"].Value);
 
-                        cboCarril.SelectedValue = Convert.ToString(DgvListado.CurrentRow.Cells["IdModulo"].Value);
-                        CboEstacionamiento.SelectedValue = Convert.ToInt64(DgvListado.CurrentRow.Cells["IdEstacionamiento"].Value);
+                        Estacionamiento estacionamiento = new Estacionamiento();
+                        estacionamiento.IdEstacionamiento = IdEstacionamientoTabla;
+
+                            CboEstacionamiento.DataSource = EstacionamientoController.ListarEstacionamiento(estacionamiento);
+                            CboEstacionamiento.ValueMember = "IdEstacionamiento";
+                            CboEstacionamiento.DisplayMember = "Nombre";
+                      
+
                         TxtFechaPago.Text = Convert.ToString(DgvListado.CurrentRow.Cells["FechaPago"].Value);
                         txtTotal.Text = Convert.ToString(DgvListado.CurrentRow.Cells["Total"].Value);
                         txtPrefijo.Text= Convert.ToString(DgvListado.CurrentRow.Cells["Prefijo"].Value);
                         txtNumeroFactura.Text = Convert.ToString(DgvListado.CurrentRow.Cells["NumeroFactura"].Value);
-                        CboTipoCobro.SelectedValue = Convert.ToInt32(DgvListado.CurrentRow.Cells["TipoVehiculo"].Value);
-                        CboUsuario.SelectedValue = Convert.ToInt64(DgvListado.CurrentRow.Cells["Documento"].Value);
+                        string IdTipoVehiculoTabla = Convert.ToString(DgvListado.CurrentRow.Cells["TipoVehiculo"].Value);
+
+                        facturasManuales.TipoVehiculo = IdTipoVehiculoTabla;
+                        
+                            CboTipoCobro.DataSource = FacturasManualesController.ListarTipoCobroNombre(facturasManuales);
+                            CboTipoCobro.ValueMember = "IdTipoVehiculo";
+                            CboTipoCobro.DisplayMember = "TipoVehiculo";
+                      
+                        Int64 documentoTabla = Convert.ToInt64(DgvListado.CurrentRow.Cells["Documento"].Value);
+                        facturasManuales.DocumentoUsuario = documentoTabla;
+                       
+                            CboUsuario.DataSource = FacturasManualesController.ListarUsuariosPorDocumento(facturasManuales);
+                            CboUsuario.ValueMember = "Documento";
+                            CboUsuario.DisplayMember = "Nombres";
+                        Desbloquear();
+                        btnGuardar.Visible= false;
                     }
                 }
             }
@@ -172,6 +261,111 @@ namespace Operaciones.Facturacion
 
                 throw ex ;
             }
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            Desbloquear();
+            btnActualizar.Visible= false;
+        }
+
+        private void CboEstacionamiento_MouseClick(object sender, MouseEventArgs e)
+        {
+            ListarSede();
+        }
+
+        private void CboTipoCobro_MouseClick(object sender, MouseEventArgs e)
+        {
+            ListarTipoCobro();
+        }
+
+        private void CboUsuario_MouseClick(object sender, MouseEventArgs e)
+        {
+            ListarUsuarios();
+        }
+
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+            Bloquear();
+            Limpiar();
+            btnGuardar.Visible = true;
+            
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+
+            double total = Convert.ToInt32(txtTotal.Text.ToString());
+            double subtotal = Math.Round((total) / 1.19, 0);
+            double iva = Convert.ToInt32(total - subtotal);
+            facturasManuales.Total = total;
+            facturasManuales.Subtotal = subtotal;
+            facturasManuales.Iva = iva;
+            facturasManuales.IdEstacionamiento = Convert.ToInt64(CboEstacionamiento.SelectedValue);
+            facturasManuales.FechaPago = Convert.ToDateTime(TxtFechaPago.Text);
+            facturasManuales.IdTipoVehiculo = Convert.ToInt32(CboTipoCobro.SelectedValue);
+            facturasManuales.NumeroFactura = txtNumeroFactura.Text;
+            facturasManuales.IdModulo = cboCarril.Text;
+            facturasManuales.Prefijo = txtPrefijo.Text;
+            facturasManuales.DocumentoUsuario = Convert.ToInt64(CboUsuario.SelectedValue);
+            string rta = "";
+            try
+            {
+                rta = FacturasManualesController.ModificarFactura(facturasManuales);
+                if (rta.Equals("OK"))
+                {
+                    MensajeOk("Registro actualizado correctamente");
+                    ListarFacturasManuales();
+                }
+                else
+                {
+                    MensajeError(rta);
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            string rta = "";
+            double total = Convert.ToInt32(txtTotal.Text.ToString());
+            double subtotal = Math.Round((total) / 1.19, 0);
+            double iva = Convert.ToInt32(total - subtotal);
+            facturasManuales.Total = total;
+            facturasManuales.Subtotal = subtotal;
+            facturasManuales.Iva = iva;
+            facturasManuales.IdEstacionamiento = Convert.ToInt64(CboEstacionamiento.SelectedValue);
+            facturasManuales.FechaPago = Convert.ToDateTime(TxtFechaPago.Text);
+            facturasManuales.IdTipoVehiculo = Convert.ToInt32(CboTipoCobro.SelectedValue);
+            facturasManuales.NumeroFactura = txtNumeroFactura.Text;
+            facturasManuales.IdModulo = cboCarril.Text;
+            facturasManuales.Prefijo = txtPrefijo.Text;
+            facturasManuales.DocumentoUsuario = Convert.ToInt64(CboUsuario.SelectedValue);
+            try
+            {
+                rta = FacturasManualesController.InsertarFactura(facturasManuales);
+                if (rta.Equals("OK"))
+                {
+                    MensajeOk("Registro guardado correctamten");
+                }
+                else
+                {
+                    MensajeError(rta);
+                }
+
+            }
+            catch (Exception ex )
+            {
+
+                throw ex ;
+            }
+
         }
     }
 }

@@ -128,7 +128,7 @@ namespace Servicios
             {
                 string fechaInicio;
                 string fechaFin;
-                fechaInicio = personasAutorizadas.FechaInicio.Year + "-" + personasAutorizadas.FechaInicio.Day + "-" + personasAutorizadas.FechaInicio.Month + " 23:59:59";
+                fechaInicio = personasAutorizadas.FechaInicio.Year + "-" + personasAutorizadas.FechaInicio.Day + "-" + personasAutorizadas.FechaInicio.Month + " 00:00:00";
                 fechaFin = personasAutorizadas.FechaFin.Year + "-" + personasAutorizadas.FechaFin.Day + "-" + personasAutorizadas.FechaFin.Month + " 23:59:59";
                 sqlCon = Conexion.getInstancia().CrearConexion();
                 string cadena = ("UPDATE T_PersonasAutorizadas SET IdAutorizacion='" + personasAutorizadas.IdAutorizado + "', " +

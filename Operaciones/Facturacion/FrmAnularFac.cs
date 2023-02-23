@@ -203,5 +203,10 @@ namespace Operaciones
         {
             ListarFacturas();
         }
+
+        private void cboEstacionamiento_MouseClick(object sender, MouseEventArgs e)
+        {
+            ListarEstacionamiento();
+        }
     }
 }

@@ -64,6 +64,7 @@
             this.cboEstacionamiento.Name = "cboEstacionamiento";
             this.cboEstacionamiento.Size = new System.Drawing.Size(209, 26);
             this.cboEstacionamiento.TabIndex = 39;
+            this.cboEstacionamiento.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cboEstacionamiento_MouseClick);
             // 
             // dvgListadoFactura
             // 
