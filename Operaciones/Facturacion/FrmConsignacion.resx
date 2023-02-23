@@ -118,10 +118,21 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnBuscar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAIdJREFUOE/tkdENgCAQQxmABVyABVzAQdzADZzFGRwRbEkNMTnAGD5t8hK469VT
+        3TDFGENKaW5Bj+xPobHC8Er0aqwIxU39rujVWBGL2sJc/YaeaoAMOwjgtJCnHgAWnCfeDfKGPGusiEU1
+        +Se8wkx6AXxS7RWOZgD4/hHR9ArpQq/Gfo2RcxdWAZRdd3gqMAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="Editar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="btnActualizar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAALpJREFUOE/VklENwzAQQwOgBEagBEpgCIIgDAZlXEKiLAYmmX1xqqy7Ta20nz3p
+        vAAADrwBlbxySQAAALpJREFUOE/VklENwzAQQwOgBEagBEpgCIIgDAZlXEKiLAYmmX1xqqy7Ta20nz3p
         lMjnc9O04eeUUi6ohMqqGzX2aq1T37ugGWFyUdCKyrK/As+1WZsZy8Lah7oB0KfWNsMs2YDEY6+t+znA
         no7mXdIGtMRex/PQxCOzGSWdYwhIks6BwVkB/g0fAcN2UTyNpA1oEfX+7iMw2CkI9v0HYmXJZJHdhyG7
         AQPaA8v34REF8XfmJzw++I+E8AQiMCdqSRz7lAAAAABJRU5ErkJggg==
@@ -138,11 +149,11 @@
   </data>
   <data name="btnGuardar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAK1JREFUOE/dkl0RgzAQhCMAAxjAQAxUQRXUAQ6wUAvVEBNxgZiku5m9wkBCeaAv
-        3Zmd3M/eNzzgLlHO+ZZSCgd+ItMpvhcCI0NwRLAI9QOPt1q7OgRLAujAA8lzx0KZexNyBkApM6ldtAJM
-        5XQlzKJihHn0Qe0iA6ht6isAgY6hmrHv9bYB8AuODG1cZmcAJaTxR3b4cwA/dYb5QxnQzJntqoAe3h61
-        POjsP+TcG3x1nEnmhVu+AAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACTSURBVDhP3ZFhDYAgFIQJQA4LWMAEJrCBDaxgBTMYyDDg
+        3duxgVPRf85ve+OAdzf2cN8gxuhRLUv7LoQwozZoQ9qb4Qgux9RMzfWCTpYSBSzsuAtgjywluakSsMlS
+        8jSAyFIC06B7BvSSV9igb0FIo2YD+1U1qaVO/hJqHb8DxvQz59OvAaPNhquO3gNzI/lPnNsBgMI6m+b1
+        BxgAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="btnNuevo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -154,15 +165,4 @@
         F/N1e5z84ICkAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="iconButton4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAIdJREFUOE/tkdENgCAQQxmABVyABVzAQdzADZzFGRwRbEkNMTnAGD5t8hK469VT
-        3TDFGENKaW5Bj+xPobHC8Er0aqwIxU39rujVWBGL2sJc/YaeaoAMOwjgtJCnHgAWnCfeDfKGPGusiEU1
-        +Se8wkx6AXxS7RWOZgD4/hHR9ArpQq/Gfo2RcxdWAZRdd3gqMAAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <metadata name="Editar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>

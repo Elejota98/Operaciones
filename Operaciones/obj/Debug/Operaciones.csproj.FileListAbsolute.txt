@@ -55,3 +55,4 @@ C:\Users\Administrador\Documents\LJ\OperacionesNube\Operaciones\obj\Debug\Operac
 C:\Users\Administrador\Documents\LJ\OperacionesNube\Operaciones\obj\Debug\Operaciones.csproj.GenerateResource.cache
 C:\Users\Administrador\Documents\LJ\OperacionesNube\Operaciones\obj\Debug\Operaciones.csproj.CoreCompileInputs.cache
 C:\Users\Administrador\Documents\LJ\OperacionesNube\Operaciones\obj\Debug\Operaciones.csproj.CopyComplete
+C:\Users\Administrador\Documents\LJ\OperacionesNube\Operaciones\obj\Debug\Operaciones.Facturacion.FrmConsignacion.resources

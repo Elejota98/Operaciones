@@ -19,13 +19,9 @@ namespace Operaciones
         public string Documento;
         public long IdEstacionamiento;
         Pagos pagos = new Pagos();
-        public FrmAnularFac(string documento, string cargo, long idEstacionamiento)
+        public FrmAnularFac()
         {
-            InitializeComponent();
-            Cargo = cargo;
-            Documento = documento;
-            IdEstacionamiento= idEstacionamiento;
-            dvgListadoFactura.Columns[0].Visible = false;
+            InitializeComponent();           
         }
 
         #region Funciones
@@ -73,13 +69,10 @@ namespace Operaciones
 
         }
         public void ListarEstacionamiento()
-        {
-            Estacionamiento estacionamiento = new Estacionamiento();
-            estacionamiento.IdEstacionamiento= IdEstacionamiento;
-           
+        {           
             try
             {
-             cboEstacionamiento.DataSource= EstacionamientoController.ListarEstacionamiento(estacionamiento);
+             cboEstacionamiento.DataSource= EstacionamientoController.ListarEstacionamientos();
                 cboEstacionamiento.ValueMember = "IdEstacionamiento";
                 cboEstacionamiento.DisplayMember = "Nombre";
             }
@@ -129,7 +122,7 @@ namespace Operaciones
                                 rta = FacturacionController.AnularFactura(pagos);
                                 if (rta.Equals("OK"))
                                 {
-                                    this.MensajeOk("Se anuló la factura :" + Convert.ToString(row.Cells[1].Value));
+                                    this.MensajeOk("Se anuló la factura :" + Convert.ToString(row.Cells[2].Value));
                                     dvgListadoFactura.Columns[0].Visible = false;
                                 }
                                 else
@@ -171,7 +164,7 @@ namespace Operaciones
                                 rta = FacturacionController.AnularFactura(pagos);
                                 if (rta.Equals("OK"))
                                 {
-                                    this.MensajeOk("Se desanuló la factura :" + Convert.ToString(row.Cells[1].Value));
+                                    this.MensajeOk("Se desanuló la factura :" + Convert.ToString(row.Cells[2].Value));
                                     dvgListadoFactura.Columns[0].Visible = false;
                                 }
                                 else

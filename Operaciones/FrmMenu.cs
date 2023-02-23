@@ -133,7 +133,7 @@ namespace Operaciones
 
         private void iconButton3_Click_1(object sender, EventArgs e)
         {
-            AbrirFormularioHijo(new FrmAnularFac(Documento, Cargo, IdEstacionamiento));
+            AbrirFormularioHijo(new FrmAnularFac());
 
             lblTitulo.Text = btnAnularFac.Text;
         }

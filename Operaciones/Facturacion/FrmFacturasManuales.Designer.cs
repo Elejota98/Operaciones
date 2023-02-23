@@ -454,6 +454,7 @@
             this.Editar});
             this.DgvListado.Location = new System.Drawing.Point(28, 75);
             this.DgvListado.Name = "DgvListado";
+            this.DgvListado.ReadOnly = true;
             this.DgvListado.Size = new System.Drawing.Size(778, 122);
             this.DgvListado.TabIndex = 54;
             this.DgvListado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvListado_CellContentClick);
@@ -462,6 +463,7 @@
             // 
             this.Editar.HeaderText = "Editar";
             this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
             // 
             // CboEstacionamientoBuscar
             // 
